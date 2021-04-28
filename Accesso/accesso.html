@@ -3,11 +3,11 @@
 
     <head>
 
-        <title> Partitella? - Index </title>
+        <title> Partitella? - Accesso Effettuato </title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width initial-scale=1"/>
 
-        <link rel="stylesheet" type="text/css" href="./index.css"/>
+        <link rel="stylesheet" type="text/css" href="../Index/index.css"/>
 
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 
@@ -16,20 +16,27 @@
         src="../js/bootstrap.min.js"></script>
         <!-- <script type="text/javascript" lang="javascript" src="script.js"></script> -->
     
-        <script type="text/javascript" src="./index.js"></script>
-    
+        <script type="text/javascript" src="../Index/index.js"></script>
+        
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     </head>
 
     <body class="text-center" onload="openPage('Home', this, 'red')">
-        
+
         <a href=#Home><button class="tablink" onclick="openPage('Home', this, 'red')">Home</button></a>
         <a href=#Partite><button class="tablink" onclick="openPage('Partite', this, 'blue')">Partite</button></a>
         <a href=#Come_Funziona><button class="tablink" onclick="openPage('Come_Funziona', this, 'orange')">Come Funziona</button></a>
-        <a href=#Accedi-Registrati><button class="tablink" onclick="openPage('Accedi-Registrati', this, 'orange')">Accedi/Registrati</button></a>
+        <a href=#Utente><button class="tablink" onclick="openPage('Utente', this, 'orange')">Impostazioni</button></a>
         
         
+
    
         <div id="Home" class="tabcontent">
+            
             <div class="split_02">
                 <div class="image_homepage"></div>
                 <form action="ricerca.php" class="form-search" method="POST" name="myForm">
@@ -65,23 +72,24 @@
                     <br>
                     Fai l'accesso e sarà semplicissimo a quel punto inserire un nuovo centro sportivo
                     <br>
-                    <button onclick="openPage('Accedi-Registrati', this, 'orange')"> Clicca qui per autenticarti/registrarti ed unirti alla community </button></a>
+                    <button onclick="openPage('Utente', this, 'orange')"> Clicca qui per autenticarti/registrarti ed unirti alla community </button></a>
                 </h3>
+                
+
+            
+
+
+
+
+
+
 
                 <div>
                     <h2> nota su COVID-19 </h2>
-                    <h7>
-                        A partire da Venerdì 6 Novembre le regioni italiane sono state classificate
-                        in base a dei colori. In ognuna di esse la pratica dello sport è vietata 
-                        o limitata. L'apertura del centro sportivo è soggetta quindi a queste 
-                        limitazioni. Prima di effettuare una prenotazione assicurati di essere in 
-                        possesso dei requisiti per giocare. 
-                    </h7>                
+                    <h7>A partire da Venerdì 6 Novembre le regioni italiane sono state classificate in base a dei colori. In ognuna di esse la pratica dello sport è vietata o limitata. L'apertura del centro sportivo è soggetta quindi a queste limitazioni. Prima di effettuare una prenotazione assicurati di essere in possesso dei requisiti per giocare. </h7>                </div>
                     <h2> Prenota il tuo campo sportivo </h2>
-                    <h7> 
-                        Sconti fino al 50% su calcio, calcetto, tennis, beach volley, beach tennis,
-                        padel, pallavolo 
-                    </h7>
+                    <h7> Sconti fino al 50% su calcio, calcetto, tennis, beach volley, beach tennis, padel, pallavolo </h7>
+                    fgadgdfg
                     <div class="boxes">
                         <div class="column_homepage">
                             VELOCE          
@@ -284,113 +292,74 @@
             </div>
         </div> 
 
-        <div id="Accedi-Registrati" class="tabcontent">
+        <div id="Utente" class="tabcontent">
 
-            <div class="column_login">
-
-                <form action="registrazione.php" class="form-signup" method="POST" name="myForm">
-                    
-
-                    <table style="margin-left:auto;margin-right:auto;" class="btn btn-lg btn-primary">
-                    
-                        
-                        <h1 class="btn btn-lg btn-primary">
-                            Login
-                        </h1>
-                        <br>
-
-
-                        <tr>
-                        
-                            <td>
-                                <input type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
-                                
-                            </td>
-                        
-                        </tr>
-                        <tr>
-                        
-
-                            <td>
-                                <input type="password" name="password" required placeholder="Inserisci la tua password qui..."/>
-                            </td>
-                        </tr>        
-                        
-                    </table>
-
-                    <br>
-                    <div id="divRemember" class() class="btn btn-lg btn-primary">
-                        
-                        <input type="checkbox" name="remember" />
-                        <label for="remember"> Ricordami </label>
-                    
-                    </div>
-                    <br>
-                    <button class="btn btn-lg btn-primary" name="loginButton" type="submit">
-                            
-                        Accedi
-
-                    </button>
-
-                </form>
-            </div>
-            
-            <div class="column_registrazione">
-                <form action="registrazione.php" class="form-signup" method="POST" name="myForm">
-                    
-                    <table style="margin-left:auto;margin-right:auto;" class="btn btn-lg btn-primary">
-                        
-                        <h1 class="btn btn-lg btn-primary">
-                            Registrazione
-                        </h1>
-                        <br>
-                        <tr>
-                        
-                           
-                            <td>
-                                <input type="text" name="nome" required placeholder="Inserisci il tuo nome qui..."> 
-                            </td>
-                        
-                        </tr>
-                        
-                        <tr>
-                           
-                            <td>
-                                <input type="text" name="cognome" required placeholder="Inserisci il tuo cognome qui..."> 
-                            </td>
-                        </tr>
-
-                        <tr>
-                           
-                            
-                            <td>
-                                <input type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
-                                
-                            </td>
-                        
-                        </tr>
-                        <tr>
-                           
-
-                            <td>
-                                <input type="password" id="password_accesso" name="password" required value="" placeholder="Inserisci la tua password qui..."  />
-                            </td>
-                        </tr>        
-                        
-                    </table>
-                    <br>
-                    <button class="btn btn-lg btn-primary" name="loginButton" type="submit" onclick="return validaPass();">
-                            
-                        Registrati
-
-                    </button>
-
-                </form>
+            <div class="split_02">
                 
+                Messaggi
+
+                <button onclick="myFunction('messaggi')">Click Me</button>
+
+                <div id="messaggi">
+                    #ELENCO MESSAGGI
+                </div> 
+
+                <hr>
+
+                Impostazioni Profilo
+
+                <button onclick="myFunction('profilo')">Click Me</button>
+
+                <div id="profilo">
+                    <form action="" method="POST" onsubmit="return validaCambioPassword()">
+                        Nuovo Nome: <input type="text">
+                        <br>
+                        Nuovo Cognome: <input type="text">
+                        <br>
+                        Nuova Mail: <input type="mail">
+                        <br>
+                        Nuova Password: <input type="password" value="" id="prima_password"> #FARE "MOSTRA PASSWORD"
+                        <br>
+                        Conferma Password: <input type="password" value="" id="seconda_password">
+                        <br>
+                        <button type="submit" value="MODIFICA">MODIFICA</button>
+                    
+                    </form>
+                </div> 
+
+                <hr>
+
+                Impostazioni Conto
+
+                <button onclick="myFunction('conto')">Click Me</button>
+
+                <div id="conto">
+                    Aggiungi Denaro
+                    <br>
+                    Cambia Carta Pagamento
+                    <br>
+
+
+                </div> 
+
+                <hr>
+
+                Assistenza
+
+                <button onclick="myFunction('assistenza')">Click Me</button>
+
+                <div id="assistenza">
+                    Contatta Assistenza
+                    <br>
+                    Informazioni Legali "Partitella?"
+
+                </div> 
+
+                
+
             </div>
+        
         </div>
-                
-                    
-                
+    </body>                
 
-        </html>
+</html>
