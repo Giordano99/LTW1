@@ -90,22 +90,55 @@ function validaPass() {
 
 function openPage(pageName, elmnt, color) {
 
+    document.getElementById('e').value = new Date().toISOString().substring(0, 10);
+
+    document.getElementById('date_partite').value = new Date().toISOString().substring(0, 10);
+
     //in this section we assign as default time the current time in homepage
     var current = new Date();
 
-    if (current.getMinutes() < 10) {
+    var minutes = current.getMinutes();
+    
+    var value_15 = 15;
 
-        time = current.getHours() + ":" + "0" + current.getMinutes();
+    var quotient = Math.floor(minutes / value_15);
+    
+    var round_minutes = (quotient * value_15) + value_15
+    
+    if (round_minutes == 60) {
+    
+        round_hours = current.getHours() + 1;
+        round_minutes = 0;
+    }
+    
+    round_hours = current.getHours();
+    
+    if (round_hours == 24) {
+    
+        round_hours = 23;
+    
+        round_minutes = 45;
+    
+    }
+    
+    if (round_minutes < 10) {
+    
+        time = round_hours + ":" + "0" + round_minutes;
     }
     else {
-
-        time = current.getHours() + ":" + current.getMinutes();
-
+    
+        time = round_hours + ":" + round_minutes;
+    
     }
-    document.getElementById("orario").defaultValue = time;
+    
+    document.getElementById("orario").value = time;
+
+    document.getElementById("orario_partite").value = time;
+
+
     
 
-
+    
 
     // Hide all elements with class="tabcontent" by default */
     var i, tabcontent, tablinks;
@@ -125,9 +158,6 @@ function openPage(pageName, elmnt, color) {
 
     // Add the specific color to the button used to open the tab content
     elmnt.style.backgroundColor = color;
-
-
-    
 
 }
 

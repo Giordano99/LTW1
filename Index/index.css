@@ -44,6 +44,20 @@ table {
     padding: 5px;
 }
 
+.column_login {
+    float: left;
+    width: 50%;
+    padding: 5px;
+    background-color: #777;
+}
+
+.column_registrazione {
+    float: right;
+    width: 50%;
+    padding: 5px;
+    background-color: rgb(6, 172, 214);
+}
+
 .column_homepage {
     float: left;
     width: 25%;

@@ -45,21 +45,10 @@
                             <option value="Rugby">Rugby</option>
                             <option value="Squash">Squash</option>
                         </select>
-
-                
-                        <input type="date" onchange="return validaCerca();" id=e>
                         
-                    
-                        <script>
-                            document.getElementById('e').value = new Date().toISOString().substring(0, 10);
-                        </script>
+                        <input type="date" onchange="return validaCerca();" id=e>
 
-
-
-                        <input type="time" id="orario" onchange="return validaCercaTime();">
-
-
-
+                        <input type="time" id=orario onchange="return validaCercaTime();">
 
                         <input type="submit" value="Cerca" onclick="return validaCercaTime();">
                 
@@ -128,80 +117,56 @@
         </div>
 
         <div id="Partite" class="tabcontent">
-        <div class="split_02">
-            <h3>Incontra Giocatori del Tuo Livello</h3>
+            <div class="split_02">
 
-            <table>
+                <h3> Come al solito vuoi giocare ma non hai compagni sufficienti oppure non riuscite ad essere
+                abbastanza per una Partitella? Bhe allora stai nel sito giusto, ci sono migliaia di partite
+                a cui mancano dei giocatori, unisciti a loro !! </h3>
+                <br>
 
-                <tr>
+                <h4> Innanzitutto ti chiediamo di completare la form qui sotto, in questo modo potremo proporti
+                tutto l'elenco possibile di partite a cui mancano dei componenti !! </h4>
 
-                    <td>
+                <br>
 
-                        <button>Tennis</button>
+                <div class="split_02">
+                    <form action="ricerca_singola.php" class="form-search" method="POST" name="myForm">
+                            
+                        <div class="boxes">
+                            
+                            <input type="text" placeholder="Città, Indirizzo, Centro Sportivo...">          
 
-                    </td>
+                            <select id="browsers">
+                                <option value="CalcioA5">Calcio A5</option>
+                                <option value="Beach_Volley">Beach Volley</option>
+                                <option value="CALCIOA8">Calcio A8</option>
+                                <option value="Rugby">Rugby</option>
+                                <option value="Squash">Squash</option>
+                            </select>
 
-                    <td>
+                    
+                            <input type="date" onchange="return validaCerca();" id="date_partite">
+                            
+                        
+                            <script>
+                                document.getElementById('date_partite').value = new Date().toISOString().substring(0, 10);
+                            </script>
 
-                        <button>Padel</button>
 
-                    </td>
 
-                    <td>
+                            <input type="time" id="orario_partite" onchange="return validaCercaTime();">
 
-                        <button>Volley</button>
 
-                    </td>
 
-                </tr>
 
-                <tr>
+                            <input type="submit" value="Cerca" onclick="return validaCercaTime();">
+                    
+                        </div>
 
-                    <td>
-
-                        <button>Calcio a 5</button>
-
-                    </td>
-
-                    <td>
-
-                        <button>Calcio a 7</button>
-
-                    </td>
-
-                    <td>
-
-                        <button>Calcio a 8</button>
-
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-
-                        <button>Beach Tennis</button>
-
-                    </td>
-
-                    <td>
-
-                        <button>Pallacanestro</button>
-
-                    </td>
-
-                    <td>
-
-                        <button>Pallavolo</button>
-
-                    </td>
-
-                </tr>
-
-            </table>
-
-        </div>            
+                    </form>
+                </div>
+                
+            </div>            
 
         </div>
 
@@ -313,62 +278,57 @@
         </div> 
 
         <div id="Accedi-Registrati" class="tabcontent">
-            
-            <div class="column">
 
-            <form action="registrazione.php" class="form-signup" method="POST" name="myForm">
-                
+            <div class="column_login">
 
-                <table style="margin-left:auto;margin-right:auto;" class="btn btn-lg btn-primary">
-                
+                <form action="registrazione.php" class="form-signup" method="POST" name="myForm">
                     
-                    <h1 class="btn btn-lg btn-primary">
-                        Login
-                    </h1>
+
+                    <table style="margin-left:auto;margin-right:auto;" class="btn btn-lg btn-primary">
+                    
+                        
+                        <h1 class="btn btn-lg btn-primary">
+                            Login
+                        </h1>
+                        <br>
+
+
+                        <tr>
+                        
+                            <td>
+                                <input type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
+                                
+                            </td>
+                        
+                        </tr>
+                        <tr>
+                        
+
+                            <td>
+                                <input type="password" name="password" required placeholder="Inserisci la tua password qui..."/>
+                            </td>
+                        </tr>        
+                        
+                    </table>
+
                     <br>
-
-
-                    <tr>
-                        <td>
-                            Email:
-                        </td>
+                    <div id="divRemember" class() class="btn btn-lg btn-primary">
                         
-                        <td>
-                            <input type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
+                        <input type="checkbox" name="remember" />
+                        <label for="remember"> Ricordami </label>
+                    
+                    </div>
+                    <br>
+                    <button class="btn btn-lg btn-primary" name="loginButton" type="submit">
                             
-                        </td>
-                    
-                    </tr>
-                    <tr>
-                        <td>
-                            
-                            Password:
-                        </td>
+                        Accedi
 
-                        <td>
-                            <input type="password" name="password" required placeholder="Inserisci la tua password qui..."/>
-                        </td>
-                    </tr>        
-                    
-                </table>
+                    </button>
 
-                <br>
-                <div id="divRemember" class() class="btn btn-lg btn-primary">
-                    
-                    <input type="checkbox" name="remember" />
-                    <label for="remember"> Ricordami </label>
-                
-                </div>
-                <br>
-                <button class="btn btn-lg btn-primary" name="loginButton" type="submit">
-                        
-                    Accedi
-
-                </button>
-
-            </form>
+                </form>
             </div>
-            <div class="column">
+            
+            <div class="column_registrazione">
                 <form action="registrazione.php" class="form-signup" method="POST" name="myForm">
                     
                     <table style="margin-left:auto;margin-right:auto;" class="btn btn-lg btn-primary">
@@ -379,9 +339,7 @@
                         <br>
                         <tr>
                         
-                            <td> 
-                                Nome: 
-                            </td>
+                           
                             <td>
                                 <input type="text" name="nome" required placeholder="Inserisci il tuo nome qui..."> 
                             </td>
@@ -389,18 +347,14 @@
                         </tr>
                         
                         <tr>
-                            <td>
-                                Cognome:
-                            </td>
+                           
                             <td>
                                 <input type="text" name="cognome" required placeholder="Inserisci il tuo cognome qui..."> 
                             </td>
                         </tr>
 
                         <tr>
-                            <td>
-                                Email:
-                            </td>
+                           
                             
                             <td>
                                 <input type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
@@ -409,9 +363,7 @@
                         
                         </tr>
                         <tr>
-                            <td>
-                                Password:
-                            </td>
+                           
 
                             <td>
                                 <input type="password" id="password_accesso" name="password" required value="" placeholder="Inserisci la tua password qui..."  />
