@@ -22,11 +22,10 @@
 
     <body class="text-center" onload="openPage('Home', this, 'red')">
         
-        <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
-        <button class="tablink" onclick="redirectPage('../Elenco_Centri/Elenco_Centri.html');">I Nostri Centri</button>
-        <button class="tablink" onclick="openPage('Partite', this, 'blue')">Partite</button>
-        <button class="tablink" onclick="openPage('Come_Funziona', this, 'orange')">Come Funziona</button>
-        <button class="tablink" onclick="openPage('Accedi-Registrati', this, 'orange')">Accedi/Registrati</button>
+        <a href=#Home><button class="tablink" onclick="openPage('Home', this, 'red')">Home</button></a>
+        <a href=#Partite><button class="tablink" onclick="openPage('Partite', this, 'blue')">Partite</button></a>
+        <a href=#Come_Funziona><button class="tablink" onclick="openPage('Come_Funziona', this, 'orange')">Come Funziona</button></a>
+        <a href=#Accedi-Registrati><button class="tablink" onclick="openPage('Accedi-Registrati', this, 'orange')">Accedi/Registrati</button></a>
         
         
    
@@ -127,12 +126,6 @@
                 
             </div>
         </div>
-
-        <div id="I_Nostri_Centri" class="tabcontent">
-        </div>
-
-
-
 
         <div id="Partite" class="tabcontent">
         <div class="split_02">
@@ -376,64 +369,65 @@
             </form>
             </div>
             <div class="column">
-            <form action="registrazione.php" class="form-signup" method="POST" name="myForm">
-                
-                <table style="margin-left:auto;margin-right:auto;" class="btn btn-lg btn-primary">
+                <form action="registrazione.php" class="form-signup" method="POST" name="myForm">
                     
-                    <h1 class="btn btn-lg btn-primary">
-                        Registrazione
-                    </h1>
-                    <br>
-                    <tr>
-                    
-                        <td> 
-                            Nome: 
-                        </td>
-                        <td>
-                            <input type="text" name="nome" required placeholder="Inserisci il tuo nome qui..."> 
-                        </td>
-                    
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                            Cognome:
-                        </td>
-                        <td>
-                            <input type="text" name="cognome" required placeholder="Inserisci il tuo cognome qui..."> 
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            Email:
-                        </td>
+                    <table style="margin-left:auto;margin-right:auto;" class="btn btn-lg btn-primary">
                         
-                        <td>
-                            <input type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
+                        <h1 class="btn btn-lg btn-primary">
+                            Registrazione
+                        </h1>
+                        <br>
+                        <tr>
+                        
+                            <td> 
+                                Nome: 
+                            </td>
+                            <td>
+                                <input type="text" name="nome" required placeholder="Inserisci il tuo nome qui..."> 
+                            </td>
+                        
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                Cognome:
+                            </td>
+                            <td>
+                                <input type="text" name="cognome" required placeholder="Inserisci il tuo cognome qui..."> 
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Email:
+                            </td>
                             
-                        </td>
-                    
-                    </tr>
-                    <tr>
-                        <td>
-                            Password:
-                        </td>
-
-                        <td>
-                            <input type="password" name="password" required placeholder="Inserisci la tua password qui..."/>
-                        </td>
-                    </tr>        
-                    
-                </table>
-                <br>
-                <button class="btn btn-lg btn-primary" name="loginButton" type="submit">
+                            <td>
+                                <input type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
+                                
+                            </td>
                         
-                    Registrati
+                        </tr>
+                        <tr>
+                            <td>
+                                Password:
+                            </td>
 
-                </button>
+                            <td>
+                                <input type="password" id="password_accesso" name="password" required value="" placeholder="Inserisci la tua password qui..."  />
+                            </td>
+                        </tr>        
+                        
+                    </table>
+                    <br>
+                    <button class="btn btn-lg btn-primary" name="loginButton" type="submit" onclick="return validaPass();">
+                            
+                        Registrati
 
-            </form>
+                    </button>
+
+                </form>
+                
             </div>
         </div>
                 

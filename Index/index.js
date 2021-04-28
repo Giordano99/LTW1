@@ -1,3 +1,10 @@
+function redirectPage(link) {
+    
+    // Simulate a mouse click:
+    window.location.href = link;
+
+}
+
 function validaCerca() {
             
     var GivenDate = document.getElementById("e")
@@ -33,7 +40,6 @@ function validaCercaTime() {
 
     if (pickedDate <= todaysDate && (time[0] < current.getHours() || time[0] < current.getHours() && time[1] < current.getMinutes())) {
 
-        alert("what")
         redirectPage('./index.html')
         return false;
 
@@ -43,15 +49,44 @@ function validaCercaTime() {
     
 }
 
+function validaPass() {
 
+    var password = document.getElementById("password_accesso")
+   
+    if (password.value.length == 0) {
+        return true;
 
+    }
+    if (password.value.length < 8) {
 
-function redirectPage(link) {
+        alert("La password deve essere lunga almeno 8 caratteri")
+        
+        redirectPage("./index.html#Accedi-Registrati")        
     
-    // Simulate a mouse click:
-    window.location.href = link;
+        
+        return false;
+    }
+    
+    if (! (password.value.includes("?") || 
+    password.value.includes("!") || password.value.includes('"') ||
+    password.value.includes("$") || password.value.includes("%") ||
+    password.value.includes("^") || password.value.includes("&") ||
+    password.value.includes("_") || password.value.includes("+"))) {
 
+        alert('La password deve contenere almeno un simbolo speciale tra i seguenti: ? ! " $ ^ & _ +');
+
+        redirectPage("./index.html#Accedi-Registrati")
+
+        return false;
+    }
+
+   return true;
+
+    
 }
+
+
+
 
 function openPage(pageName, elmnt, color) {
 
