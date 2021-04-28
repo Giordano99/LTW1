@@ -57,7 +57,7 @@ function openPage(pageName, elmnt, color) {
 
     //in this section we assign as default time the current time in homepage
     var current = new Date();
-   
+
     if (current.getMinutes() < 10) {
 
         time = current.getHours() + ":" + "0" + current.getMinutes();
