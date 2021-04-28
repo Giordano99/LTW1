@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title> Elenco Centri</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width initial-scale=1"/>
+
+
+    <link rel="stylesheet" type="text/css" href="../Index/index.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" type="type/css" href="style.css"/>
+    <script type="text/javascript" lang="javascript"
+    src="../js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" lang="javascript" src="script.js"></script> -->
+
+    <script type="text/javascript" src="..Index/index.js"></script>
+
+
+</head>
+<script>
+
+    function newLocation(link) {
+        window.location.href=link;
+    }
+
+</script>
+<body class="text-center"">
+
+    <button class="tablink" onclick="newLocation('../Index/index.html')"> Home </button>
+
+    <button class="tablink" onclick="openPage('I_Nostri_Centri', this, 'blue')">
+        I Nostri Centri
+    </button>
+    <button class="tablink" onclick="openPage('Partite', this, 'blue')">
+        <a href="../Index/index.html">Partite</a>
+    </button>
+    <button class="tablink" onclick="openPage('Come_Funziona', this, 'orange')">Come Funziona</button>
+    <button class="tablink" onclick="openPage('Accedi-Registrati', this, 'orange')">Accedi/Registrati</button>
+    
+    
+    <div id="Home" class="tabcontent" onclick="redirectPage('../Index/index.html');"></div>
+
+    <div id="I_Nostri_Centri" class="tabcontent">fgasdasfasdf</div>
+
+    <div id="Partite" class="tabcontent"></div>
+
+    <div id="Come_Funziona" class="tabcontent"></div>
+
+    <div id="Accedi-Registrati" class="tabcontent"></div>
+    
+</body>
+</html> 
