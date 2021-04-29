@@ -1,3 +1,26 @@
+//function to reset 'Impostazioni' of page of login access
+function clickHide() {
+    
+    
+    var messaggi = document.getElementById('messaggi');
+    var profilo = document.getElementById('profilo');
+    var conto = document.getElementById('conto');
+    var assistenza = document.getElementById('assistenza');
+
+    messaggi.style.display = "none";
+    profilo.style.display = "none";
+    conto.style.display = "none";
+    assistenza.style.display = "none";
+
+
+    /*if (.style.display === "none") {
+
+        alert("alo")
+
+    }*/
+
+}
+
 function myFunction(id) {
     var x = document.getElementById(id);
     if (x.style.display === "none") {
@@ -171,6 +194,11 @@ function validaPass() {
 
 
 function openPage(pageName, elmnt, color) {
+
+    if (pageName == 'Utente') {
+
+        clickHide()
+    }
 
     document.getElementById('e').value = new Date().toISOString().substring(0, 10);
 
