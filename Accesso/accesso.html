@@ -25,9 +25,9 @@
 
     </head>
 
-    <body class="text-center" onload="openPage('Home', this, 'red')">
+    <body class="text-center" onload="openPage('Home_Accesso', this, 'red')">
 
-        <a href=#Home><button class="tablink" onclick="openPage('Home', this, 'red')">Home</button></a>
+        <a href=#Home_Accesso><button class="tablink" onclick="openPage('Home_Accesso', this, 'red')">Home</button></a>
         <a href=#Partite><button class="tablink" onclick="openPage('Partite', this, 'blue')">Partite</button></a>
         <a href=#Come_Funziona><button class="tablink" onclick="openPage('Come_Funziona', this, 'orange')">Come Funziona</button></a>
         <a href=#Utente><button class="tablink" onclick="openPage('Utente', this, 'orange')">Impostazioni</button></a>
@@ -35,7 +35,7 @@
         
 
    
-        <div id="Home" class="tabcontent">
+        <div id="Home_Accesso" class="tabcontent">
             
             <div class="split_02">
                 <div class="image_homepage"></div>
@@ -63,81 +63,129 @@
 
                 </form>
 
+                <hr>
+
                 <h4> Gestisci un centro sportivo? </h4>
                 
-                <h3>
-                    Ti gestiremo noi il tuo calendario degli appuntamenti per filo e per segno
-                    <br>
-                    Perchè non aggiungi il tuo centro sportivo al nostro database, è semplice e valoce
-                    <br>
-                    Fai l'accesso e sarà semplicissimo a quel punto inserire un nuovo centro sportivo
-                    <br>
-                    <button onclick="openPage('Utente', this, 'orange')"> Clicca qui per autenticarti/registrarti ed unirti alla community </button></a>
-                </h3>
-                
-
-            
-
-
-
-
-
-
-
-                <div>
-                    <h2> nota su COVID-19 </h2>
-                    <h7>A partire da Venerdì 6 Novembre le regioni italiane sono state classificate in base a dei colori. In ognuna di esse la pratica dello sport è vietata o limitata. L'apertura del centro sportivo è soggetta quindi a queste limitazioni. Prima di effettuare una prenotazione assicurati di essere in possesso dei requisiti per giocare. </h7>                </div>
-                    <h2> Prenota il tuo campo sportivo </h2>
-                    <h7> Sconti fino al 50% su calcio, calcetto, tennis, beach volley, beach tennis, padel, pallavolo </h7>
-                    fgadgdfg
-                    <div class="boxes">
-                        <div class="column_homepage">
-                            VELOCE          
-                            <br>
-                            Trova rapidamente un campo disponibile nella tua zona e prenota con un clic.    
-                        </div>
-                        <div class="column_homepage">        
-                            GRATUITO
-                            <br>
-                            Nessun costo aggiuntivo in fase di prenotazione.
-                        </div>
-                        <div class="column_homepage">
-                            FACILE
-                            <br>
-                            Basta telefonate ai centri della tua zona, effettua una ricerca e trova il campo migliore per te.
-                        </div>
-                        <div class="column_homepage">
-                            SCONTI
-                            <br>
-                            Sconti fino al 50% rispetto al costo attuato dal campo digagdfgdasgdfagfdgadrgadsfgrettamfsafasdfasdfente.    
-                        </div>
-                    </div>
-
-                    <div class="boxes">
-                        <div class="column_homepage">
-                            #VALUE
-                            <br>
-                            Campi sportivi in Italia    
-                        </div>
-                        <div class="column_homepage">
-                            #VALUE
-                            <br>
-                            Utenti Registrati
-                        </div>
-                        <div class="column_homepage">
-                            #VALUE
-                            <br>
-                            Prenotazioni totali        
-                        </div>
-                        <div class="column_homepage">
-                            #VALUE
-                            <br>
-                            Totale soldi risparmiati
-                        </div>
-                    </div>
+                <button onclick="myFunction('centro_sportivo')"> Clicca qui per aggiungere il tuo centro sportivo </button>
+                <div id="centro_sportivo">
+                    <form action="roba.php" method="POST">
                     
+                        <input type="text" required placeholder="Nome Centro Sportivo...">
+                        <br>
+                        <input type="text" required placeholder="Città Centro Sportivo">
+                        <br>
+                        <input type="text" required placeholder="Via del Centro Sportivo...">
+                        <br>
+                        <input type="text" required placeholder="Descrizione Centro Sportivo...">
+                        <br>
+                        <input type="text" required placeholder="Regole Centro Sportivo...">
+                        <br>
+
+                        Elenco Servizi:
+                        <button onclick="myFunction('servizi')">Click Me</button>
+
+                        <div id="servizi">
+
+                            <br>
+                            <input type="checkbox" value="docce"> Docce
+                            <br>
+                            <input type="checkbox" value="ristorante"> Ristorante
+                            <br>
+                            <input type="checkbox" value="bar"> Bar
+                            <br>
+                            <input type="checkbox" value="pizzeria"> Pizzeria
+                            <br>
+                            <input type="checkbox" value="picnic"> Area Picnic
+                            <br>
+                            <input type="checkbox" value="spogliatoi"> Spogliatoi
+                            <br>
+                            <input type="checkbox" value="casacche"> Casacche
+                            <br>
+                            <input type="checkbox" value="pub"> Pub
+                            <br>
+                            <input type="checkbox" value="parcheggio"> Parcheggio
+                            <br>
+                            <input type="checkbox" value="tornei_campionati"> Tornei/Campionati
+                            <br>
+                            <input type="checkbox" value="sala_feste"> Sala Feste
+                                
+                        </div>
+                        <br>
+                        Elenco Sport:
+                        <button onclick="myFunction('sport')">Click Me</button>
+
+                        <div id="sport">
+                            <br>
+                            <input type="checkbox" value="calcio_a5"> Calcio A5
+                            <br>
+                            <input type="checkbox" value="beach_volley"> Beach Volley
+                            <br>
+                            <input type="checkbox" value="calcio_a8"> Calcio A8
+                            <br>
+                            <input type="checkbox" value="pizzeria"> Rugby
+                            <br>
+                            <input type="checkbox" value="picnic"> Squash
+                        </div>
+                        <br>
+                        <input type="submit" value="INVIA">
+                    
+                    </form>
                 </div>
-                
+                <hr>
+              
+                <h2> Prenota il tuo campo sportivo </h2>
+                <h7> Sconti fino al 50% su calcio, calcetto, tennis, beach volley, 
+                    beach tennis, padel, pallavolo 
+                </h7>
+
+                <div class="boxes">
+                    
+                    <div class="column_homepage">
+                        VELOCE          
+                        <br>
+                        Trova rapidamente un campo disponibile nella tua zona e prenota con un clic.    
+                    </div>
+                    <div class="column_homepage">        
+                        GRATUITO
+                        <br>
+                        Nessun costo aggiuntivo in fase di prenotazione.
+                    </div>
+                    <div class="column_homepage">
+                        FACILE
+                        <br>
+                        Basta telefonate ai centri della tua zona, effettua una ricerca e trova il campo migliore per te.
+                    </div>
+                    <div class="column_homepage">
+                        SCONTI
+                        <br>
+                        Sconti fino al 50% rispetto al costo attuato dal campo digagdfgdasgdfagfdgadrgadsfgrettamfsafasdfasdfente.    
+                    </div>
+                </div>
+
+                <div class="boxes">
+                    <div class="column_homepage">
+                        #VALUE
+                        <br>
+                        Campi sportivi in Italia    
+                    </div>
+                    <div class="column_homepage">
+                        #VALUE
+                        <br>
+                        Utenti Registrati
+                    </div>
+                    <div class="column_homepage">
+                        #VALUE
+                        <br>
+                        Prenotazioni totali        
+                    </div>
+                    <div class="column_homepage">
+                        #VALUE
+                        <br>
+                        Totale soldi risparmiati
+                    </div>
+                </div>
+                    
                 
             </div>
         </div>
@@ -360,6 +408,9 @@
 
                 </div> 
 
+                <!-- DEBUG -->
+                <br>
+                <a href="../Accesso/accesso.html"><button> DEBUG TO RETURN TO INDEX </button></a>
                 
 
             </div>

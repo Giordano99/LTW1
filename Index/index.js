@@ -1,7 +1,14 @@
 //function to reset 'Impostazioni' of page of login access
-function clickHide() {
-    
-    
+function clickHide(array) {
+
+    var i;
+    for (i = 0; i < array.length; i++) {
+
+        document.getElementById(array[i]).style.display = "none"
+
+    }
+
+    /*
     var messaggi = document.getElementById('messaggi');
     var profilo = document.getElementById('profilo');
     var conto = document.getElementById('conto');
@@ -11,13 +18,12 @@ function clickHide() {
     profilo.style.display = "none";
     conto.style.display = "none";
     assistenza.style.display = "none";
+    */
 
+}
 
-    /*if (.style.display === "none") {
+function clickHideHome() {
 
-        alert("alo")
-
-    }*/
 
 }
 
@@ -195,9 +201,16 @@ function validaPass() {
 
 function openPage(pageName, elmnt, color) {
 
-    if (pageName == 'Utente') {
+    if (pageName == 'Home_Accesso') {
+        
+        array = ['servizi', 'centro_sportivo', 'sport']
+        clickHide(array)
 
-        clickHide()
+    }
+    if (pageName == 'Utente') {
+        
+        array = ['messaggi', 'profilo', 'conto', 'assistenza']
+        clickHide(array)
     }
 
     document.getElementById('e').value = new Date().toISOString().substring(0, 10);
