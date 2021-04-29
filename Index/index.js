@@ -8,11 +8,48 @@ function myFunction(id) {
     }
 } 
 
+function togglePassword(el, password, toggleText){
+    
+    // Checked State
+    var checked = el.checked;
+  
+    if(checked) {
+     // Changing type attribute
+     document.getElementById(password).type = 'text';
+  
+     // Change the Text
+     document.getElementById(toggleText).textContent= "Nascondi Password";
+    }
+    else {
+     // Changing type attribute
+     document.getElementById(password).type = 'password';
+  
+     // Change the Text
+     document.getElementById(toggleText).textContent= "Mostra Password";
+    }
+  
+}
+
 function validaCambioPassword() {
 
     var prima = document.getElementById("prima_password");
 
     var seconda = document.getElementById("seconda_password")
+
+    var nome = document.getElementById("nome_impostazioni")
+
+    var cognome = document.getElementById("cognome_impostazioni")
+
+    var mail = document.getElementById("mail_impostazioni")
+    
+    if (nome.value.length == 0 && cognome.value.length == 0 &&
+        mail.value.length == 0 && prima.value.length == 0 &&
+        seconda.value.length == 0) {
+
+        alert("Non Si è Modificato Nulla")
+        return false;
+
+    }
 
     if ((prima.value.length == 0 && seconda.value.length != 0) ||
         (prima.value.length != 0 && seconda.value.length == 0) ) {

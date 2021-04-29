@@ -312,8 +312,14 @@
                         
 
                             <td>
-                                <input type="password" name="password" required placeholder="Inserisci la tua password qui..."/>
+                                <input type="password" name="password" id="password_login" required placeholder="Inserisci la tua password qui..."/>
                             </td>
+
+                            <td>
+                                &nbsp;
+                                <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "password_login", "login_toggleText");'>&nbsp; <span id='login_toggleText'>Mostra Password</span>
+                            </td>
+
                         </tr>        
                         
                     </table>
@@ -370,7 +376,6 @@
                         
                         </tr>
                         <tr>
-                           
 
                             <td>
                                 <input type="password" id="password_accesso" name="password" required value="" placeholder="Inserisci la tua password qui..."  />

@@ -311,16 +311,21 @@
                 <button onclick="myFunction('profilo')">Click Me</button>
 
                 <div id="profilo">
-                    <form action="" method="POST" onsubmit="return validaCambioPassword()">
-                        Nuovo Nome: <input type="text">
+                    <form action="roba.php" method="POST" onsubmit="return validaCambioPassword()">
+                        <input placeholder="Nuovo Nome..." type="text" id="nome_impostazioni">
                         <br>
-                        Nuovo Cognome: <input type="text">
+                        <input placeholder="Nuovo Cognome..." type="text" id="cognome_impostazioni">
                         <br>
-                        Nuova Mail: <input type="mail">
+                        <input placeholder="Nuova Mail..." type="mail" id="mail_impostazioni">
                         <br>
-                        Nuova Password: <input type="password" value="" id="prima_password"> #FARE "MOSTRA PASSWORD"
+                        <input placeholder="Nuova Password..." type="password" value="" id="prima_password">
+                        &nbsp;
+                        <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "prima_password", "prima_toggleText");'>&nbsp; <span id='prima_toggleText'>Mostra Password</span>
                         <br>
-                        Conferma Password: <input type="password" value="" id="seconda_password">
+                        <input placeholder="Conferma Password..." type="password" value="" id="seconda_password">
+                        &nbsp;
+                        <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "seconda_password", "seconda_toggleText");'>&nbsp; <span id='seconda_toggleText'>Mostra Password</span>
+                        <br>
                         <br>
                         <button type="submit" value="MODIFICA">MODIFICA</button>
                     
