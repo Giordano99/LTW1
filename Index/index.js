@@ -1,4 +1,4 @@
-//function to reset 'Impostazioni' of page of login access
+//function to reset various 'click me', the buttons that show/hide part of web page
 function clickHide(array) {
 
     var i;
@@ -8,25 +8,9 @@ function clickHide(array) {
 
     }
 
-    /*
-    var messaggi = document.getElementById('messaggi');
-    var profilo = document.getElementById('profilo');
-    var conto = document.getElementById('conto');
-    var assistenza = document.getElementById('assistenza');
-
-    messaggi.style.display = "none";
-    profilo.style.display = "none";
-    conto.style.display = "none";
-    assistenza.style.display = "none";
-    */
-
 }
 
-function clickHideHome() {
-
-
-}
-
+//function needed to show/hide part of html page
 function myFunction(id) {
     var x = document.getElementById(id);
     if (x.style.display === "none") {
@@ -37,6 +21,7 @@ function myFunction(id) {
     }
 } 
 
+//function to show/hide password when it is inserted
 function togglePassword(el, password, toggleText){
     
     // Checked State
@@ -59,17 +44,19 @@ function togglePassword(el, password, toggleText){
   
 }
 
-function validaCambioPassword() {
+//function needed to validate that first and second password inserted are equal
+function validaCambioPassword(prima_password, seconda_password, nome_impostazioni, 
+    cognome_impostazioni, mail_impostazioni) {
 
-    var prima = document.getElementById("prima_password");
+    var prima = document.getElementById(prima_password);
 
-    var seconda = document.getElementById("seconda_password")
+    var seconda = document.getElementById(seconda_password)
 
-    var nome = document.getElementById("nome_impostazioni")
+    var nome = document.getElementById(nome_impostazioni)
 
-    var cognome = document.getElementById("cognome_impostazioni")
+    var cognome = document.getElementById(cognome_impostazioni)
 
-    var mail = document.getElementById("mail_impostazioni")
+    var mail = document.getElementById(mail_impostazioni)
     
     if (nome.value.length == 0 && cognome.value.length == 0 &&
         mail.value.length == 0 && prima.value.length == 0 &&
@@ -85,9 +72,9 @@ function validaCambioPassword() {
 
         alert("Conferma la Password in entrambi i campi 'Nuova Password' e 'Conferma Password'")
         
-        document.getElementById("prima_password").value = ""
+        document.getElementById(prima_password).value = ""
 
-        document.getElementById("seconda_password").value = ""
+        document.getElementById(seconda_password).value = ""
         
         return false;
 
@@ -98,9 +85,9 @@ function validaCambioPassword() {
 
         alert("Le due password devono essere uguali")
 
-        document.getElementById("prima_password").value = ""        
+        document.getElementById(prima_password).value = ""        
 
-        document.getElementById("seconda_password").value = ""
+        document.getElementById(seconda_password).value = ""
 
         return false;
 
@@ -200,6 +187,13 @@ function validaPass() {
 
 
 function openPage(pageName, elmnt, color) {
+
+    if (pageName == 'Come_Funziona') {
+
+        array = ['how_work_prenota', 'how_work_partite', 'how_work_gestione', 'how_work_accesso']
+        clickHide(array)
+
+    }
 
     if (pageName == 'Home_Accesso') {
         
