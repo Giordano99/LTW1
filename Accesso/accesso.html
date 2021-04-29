@@ -57,7 +57,7 @@
 
                         <input type="time" id=orario onchange="return validaCercaTime();">
 
-                        <input type="submit" value="Cerca" onclick="return validaCercaTime();">
+                        <input class="btn btn-lg btn-success" type="submit" value="Cerca" onclick="return validaCercaTime();">
                 
                     </div>
 
@@ -69,7 +69,7 @@
                     Gestisci un centro sportivo? 
                 </div>
                 
-                <button onclick="myFunction('centro_sportivo')"> 
+                <button class="btn btn-link btn-info" onclick="myFunction('centro_sportivo')"> 
                     Clicca qui per aggiungere il tuo centro sportivo 
                 </button>
                 <div id="centro_sportivo">
@@ -87,10 +87,10 @@
                         <br>
 
                         Elenco Servizi:
-                        <button onclick="myFunction('servizi')">Click Me</button>
+                        <button class="btn btn-info" onclick="myFunction('servizi')">Click Me</button>
 
                         <div id="servizi">
-
+                            
                             <br>
                             <input type="checkbox" value="docce"> Docce
                             <br>
@@ -117,7 +117,7 @@
                         </div>
                         <br>
                         Elenco Sport:
-                        <button onclick="myFunction('sport')">Click Me</button>
+                        <button class="btn btn-info" onclick="myFunction('sport')">Click Me</button>
 
                         <div id="sport">
                             <br>
@@ -132,7 +132,7 @@
                             <input type="checkbox" value="picnic"> Squash
                         </div>
                         <br>
-                        <input type="submit" value="INVIA">
+                        <input class="btn btn-lg btn-success" type="submit" value="INVIA">
                     
                     </form>
                 </div>
@@ -233,7 +233,7 @@
 
                             <input type="time" id="orario_partite" onchange="return validaCercaTime();">
 
-                            <input type="submit" value="Cerca" onclick="return validaCercaTime();">
+                            <input class="btn btn-lg btn-success" type="submit" value="Cerca" onclick="return validaCercaTime();">
                     
                         </div>
 
@@ -256,7 +256,7 @@
                 <br>
                 Siete al completo e vuoi prenotare un campo
 
-                <button onclick="myFunction('how_work_prenota')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('how_work_prenota')">Click Me</button>
 
                 <div id="how_work_prenota">
                 
@@ -267,7 +267,7 @@
                 <hr>
                 Hai una voglia folle di giocare ma non conosci nessuno oppure
                 non siete abbastanza per fare una Partitella?
-                <button onclick="myFunction('how_work_partite')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('how_work_partite')">Click Me</button>
 
                 <div id="how_work_partite">
                 
@@ -278,7 +278,7 @@
                 <hr>
                 Hai un campo sportivo e vuoi aggiungerlo al nostro sistema
 
-                <button onclick="myFunction('how_work_gestione')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('how_work_gestione')">Click Me</button>
 
                 <div id="how_work_gestione">
                 
@@ -288,7 +288,7 @@
                 <hr>
                 Vuoi iscriverti/loggarti?
 
-                <button onclick="myFunction('how_work_accesso')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('how_work_accesso')">Click Me</button>
 
                 <div id="how_work_accesso">
                 
@@ -305,12 +305,12 @@
             <div class="split_02">
                 
                 <a href="../Index/index.html">
-                    <button> Clicca qui per fare il log-out </button>
+                    <button class="btn btn-danger"> Clicca qui per fare il log-out </button>
                 </a>
                 <hr>
                 Messaggi
 
-                <button onclick="myFunction('messaggi')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('messaggi')">Click Me</button>
 
                 <div id="messaggi">
                     #ELENCO MESSAGGI
@@ -320,7 +320,7 @@
 
                 Impostazioni Profilo
 
-                <button onclick="myFunction('profilo')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('profilo')">Click Me</button>
 
                 <div id="profilo">
                     <form action="roba.php" method="POST" 
@@ -367,8 +367,8 @@
                                     <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "seconda_password", "seconda_toggleText");'>&nbsp; <span id='seconda_toggleText'>Mostra Password</span>
                                 </div>
                             </div>
-                            <button type="submit" value="MODIFICA">MODIFICA</button>
                         </div>
+                        <button class="btn btn-success btn-lg" type="submit" value="MODIFICA">EFFETTUA LE MODIFICHE</button>
                     </form>
                 </div> 
 
@@ -376,7 +376,7 @@
 
                 Impostazioni Conto
 
-                <button onclick="myFunction('conto')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('conto')">Click Me</button>
 
                 <div id="conto">
                     Aggiungi Denaro
@@ -391,7 +391,7 @@
 
                 Assistenza
 
-                <button onclick="myFunction('assistenza')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('assistenza')">Click Me</button>
 
                 <div id="assistenza">
                     Contatta Assistenza

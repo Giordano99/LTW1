@@ -33,7 +33,7 @@
             <div class="split_02">
                 <div class="image_homepage"></div>
                 <form action="ricerca.php" class="form-search" method="POST" name="myForm">
-                        
+                
                     <div class="boxes">
                         
                         <input type="text" placeholder="Città, Indirizzo, Centro Sportivo...">          
@@ -50,13 +50,13 @@
 
                         <input type="time" id=orario onchange="return validaCercaTime();">
 
-                        <input type="submit" value="Cerca" onclick="return validaCercaTime();">
+                        <input class="btn btn-success" type="submit" value="Cerca" onclick="return validaCercaTime();">
                 
                     </div>
 
                 </form>
 
-                <div class='h3'> 
+                <div class='h2'> 
                     Gestisci un centro sportivo? 
                 </div>
                 
@@ -67,27 +67,12 @@
                     <br>
                     Fai l'accesso e sarà semplicissimo a quel punto inserire un nuovo centro sportivo
                     <br>
-                    <button onclick="openPage('Accedi-Registrati', this, 'orange')"> Clicca qui per autenticarti/registrarti ed unirti alla community </button></a>
+                    <button class="btn btn-link btn-info" onclick="openPage('Accedi-Registrati', this, 'orange')"> 
+                        Clicca qui per autenticarti/registrarti ed unirti alla community 
+                    </button>
                 </div>
 
                 <div>
-                    <div class='h2'> 
-                        nota su COVID-19 
-                    </div>
-                    <div class='h6'>
-                        A partire da Venerdì 6 Novembre le regioni italiane sono state classificate
-                        in base a dei colori. In ognuna di esse la pratica dello sport è vietata 
-                        o limitata. L'apertura del centro sportivo è soggetta quindi a queste 
-                        limitazioni. Prima di effettuare una prenotazione assicurati di essere in 
-                        possesso dei requisiti per giocare. 
-                    </div>                
-                    <div class='h2'> 
-                        Prenota il tuo campo sportivo 
-                    </div>
-                    <div class='h7'> 
-                        Sconti fino al 50% su calcio, calcetto, tennis, beach volley, beach tennis,
-                        padel, pallavolo 
-                    </div>
                     <div class="boxes">
                         <div class="column_homepage">
                             VELOCE          
@@ -176,7 +161,7 @@
 
                             <input type="time" id="orario_partite" onchange="return validaCercaTime();">
 
-                            <input type="submit" value="Cerca" onclick="return validaCercaTime();">
+                            <input class="btn btn-success type="submit" value="Cerca" onclick="return validaCercaTime();">
                     
                         </div>
 
@@ -199,7 +184,7 @@
                 <br>
                 Siete al completo e vuoi prenotare un campo
 
-                <button onclick="myFunction('how_work_prenota')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('how_work_prenota')">Click Me</button>
 
                 <div id="how_work_prenota">
                 
@@ -210,7 +195,7 @@
                 <hr>
                 Hai una voglia folle di giocare ma non conosci nessuno oppure
                 non siete abbastanza per fare una Partitella?
-                <button onclick="myFunction('how_work_partite')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('how_work_partite')">Click Me</button>
 
                 <div id="how_work_partite">
                 
@@ -221,7 +206,7 @@
                 <hr>
                 Hai un campo sportivo e vuoi aggiungerlo al nostro sistema
 
-                <button onclick="myFunction('how_work_gestione')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('how_work_gestione')">Click Me</button>
 
                 <div id="how_work_gestione">
                 
@@ -231,7 +216,7 @@
                 <hr>
                 Vuoi iscriverti/loggarti?
 
-                <button onclick="myFunction('how_work_accesso')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('how_work_accesso')">Click Me</button>
 
                 <div id="how_work_accesso">
                 
@@ -260,7 +245,7 @@
                         <div class='tr'>
                         
                             <div class='td'>
-                                <input type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
+                                <input class="btn-lg btn btn-primary" type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
                                 
                             </div>
                         
@@ -269,12 +254,12 @@
                         
 
                             <div class='td'>
-                                <input type="password" name="password" id="password_login" required placeholder="Inserisci la tua password qui..."/>
+                                <input class="btn-lg btn btn-primary" type="password" name="password" id="password_login" required placeholder="Inserisci la tua password qui..."/>
                             </div>
 
                             <div class='td'>
-                                &nbsp;
-                                <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "password_login", "login_toggleText");'>&nbsp; <span id='login_toggleText'>Mostra Password</span>
+                                <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "password_login", "login_toggleText");'> 
+                                <span class="btn-lg btn btn-warning" id='login_toggleText'>Mostra Password</span>
                             </div>
 
                         </div>     
@@ -289,7 +274,7 @@
                     
                     </div>
                     <br>
-                    <button class="btn btn-lg btn-primary" name="loginButton" type="submit">
+                    <button class="btn btn-lg btn-success" name="loginButton" type="submit">
                             
                         Accedi
 
@@ -308,7 +293,7 @@
                         <br>
                         <div class='tr'>                   
                             <div class='td'>
-                                <input type="text" name="nome" required placeholder="Inserisci il tuo nome qui..."> 
+                                <input class="btn-lg btn btn-primary" type="text" name="nome" required placeholder="Inserisci il tuo nome qui..."> 
                             </div>
                         
                         </div>
@@ -316,34 +301,33 @@
                         <div class='tr'>
                            
                             <div class='td'>
-                                <input type="text" name="cognome" required placeholder="Inserisci il tuo cognome qui..."> 
+                                <input class="btn-lg btn btn-primary" type="text" name="cognome" required placeholder="Inserisci il tuo cognome qui..."> 
                             </div>
                         </div>
 
                         <div class='tr'>
                             <div class='td'>
-                                <input type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
+                                <input class="btn-lg btn btn-primary" type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
                             </div>
                         
                         </div>
                         <div class='tr'>
 
                             <div class='td'>
-                                <input type="password" id="password_registrazione" name="password" required value="" placeholder="Inserisci la tua password qui..."  />
+                                <input class="btn-lg btn btn-primary" type="password" id="password_registrazione" name="password" required value="" placeholder="Inserisci la tua password qui..."  />
                             </div>
 
                             <div class='td'>
                                 &nbsp;
-                                <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "password_registrazione", "registrazione_toggleText");'>&nbsp; <span id='registrazione_toggleText'>Mostra Password</span>
+                                <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "password_registrazione", "registrazione_toggleText");'> 
+                                <span class="btn-lg btn btn-warning" id='registrazione_toggleText'>Mostra Password</span>
                             </div>
                         </div>        
                         
                     </div>
                 
-                    <button class="btn btn-lg btn-primary" name="loginButton" type="submit" onclick="return validaPass();">
-                            
+                    <button class="btn btn-lg btn-success" name="loginButton" type="submit" onclick="return validaPass();">   
                         Registrati
-
                     </button>
 
                 </form>

@@ -241,6 +241,13 @@ function openPage(pageName, elmnt, color) {
     
     }
     
+    if (round_hours < 10) {
+        
+        round_hours = "0" + round_hours;
+
+    }
+
+    
     if (round_minutes < 10) {
     
         time = round_hours + ":" + "0" + round_minutes;
