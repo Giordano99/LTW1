@@ -35,9 +35,12 @@
                 <form action="ricerca.php" class="form-search" method="POST" name="myForm">
                 
                     <div class="boxes">
-                        
-                        <input type="text" placeholder="Città, Indirizzo, Centro Sportivo...">          
+                        <div class="h2">
 
+                        </div>
+                        <input type="text" placeholder="Inserisci la Città..."/>
+                        <input type="text" placeholder="...Oppure il Centro Sportivo..."/>
+    
                         <select id="browsers">
                             <option value="CalcioA5">Calcio A5</option>
                             <option value="Beach_Volley">Beach Volley</option>
@@ -146,9 +149,9 @@
                     <form action="ricerca_singola.php" class="form-search" method="POST" name="myForm">
                             
                         <div class="boxes">
-                            
-                            <input type="text" placeholder="Città, Indirizzo, Centro Sportivo...">          
-
+                            <input type="text" placeholder="Inserisci la Città..."/>
+                            <input type="text" placeholder="...Oppure il Centro Sportivo..."/>
+                           
                             <select id="browsers">
                                 <option value="CalcioA5">Calcio A5</option>
                                 <option value="Beach_Volley">Beach Volley</option>
@@ -258,8 +261,10 @@
                             </div>
 
                             <div class='td'>
-                                <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "password_login", "login_toggleText");'> 
-                                <span class="btn-lg btn btn-warning" id='login_toggleText'>Mostra Password</span>
+                                <label> 
+                                    <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "password_login", "login_toggleText");'>  
+                                    <span class="btn-lg btn btn-warning" id='login_toggleText'>Mostra Password</span> 
+                                </label>
                             </div>
 
                         </div>     
@@ -267,10 +272,12 @@
                     </div>
 
                     <br>
-                    <div id="divRemember" class() class="btn btn-lg btn-primary">
+                    <div id="divRemember" class()>
                         
-                        <input type="checkbox" name="remember" />
-                        <label for="remember"> Ricordami </label>
+                        <label class="btn btn-lg btn-primary">
+                            <input type="checkbox" name="remember" />
+                            Ricordami 
+                        </label>
                     
                     </div>
                     <br>
@@ -319,9 +326,26 @@
 
                             <div class='td'>
                                 &nbsp;
-                                <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "password_registrazione", "registrazione_toggleText");'> 
-                                <span class="btn-lg btn btn-warning" id='registrazione_toggleText'>Mostra Password</span>
+                                <label> 
+                                    <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "password_registrazione", "registrazione_toggleText");'>
+                                    <span class="btn-lg btn btn-warning" id='registrazione_toggleText'>Mostra Password</span> 
+                                </label>
                             </div>
+                        </div>
+                        
+                        <div class='tr'>
+                            <div class='td'>
+                                <input class="btn-lg btn btn-primary" type="password" id="password_registrazione_conferma" name="password" required value="" placeholder="Inserisci la tua password qui..."  />
+                            </div>
+
+                            <div class='td'>
+                                &nbsp;
+                                <label> 
+                                    <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "password_registrazione_conferma", "registrazione_conferma_toggleText");'>
+                                    <span class="btn-lg btn btn-warning" id='registrazione_conferma_toggleText'>Mostra Password</span> 
+                                </label>
+                            </div>
+
                         </div>        
                         
                     </div>
@@ -333,7 +357,9 @@
                 </form>
                 
             </div>
-            <a href="../Accesso/accesso.html"><button> DEBUG TO SKIP PAGE </button></a>
+            <a href="../Accesso/accesso.html">
+                <button> DEBUG TO SKIP PAGE </button>
+            </a>
             </div>
         </div>
     

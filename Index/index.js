@@ -149,8 +149,11 @@ function validaCercaTime() {
 
 function validaPass() {
 
-    var password = document.getElementById("password_accesso")
+    var password = document.getElementById("password_registrazione")
+
+    var password_conferma = document.getElementById("password_registrazione_conferma")
    
+
     if (password.value.length == 0) {
         return true;
 
@@ -176,6 +179,14 @@ function validaPass() {
         redirectPage("./index.html#Accedi-Registrati")
 
         return false;
+    }
+
+    if (password.value != password_conferma) {
+
+        alert('Le Due Password non Coincidono');
+        redirectPage("./index.html#Accedi-Registrati")
+        return false;
+
     }
 
    return true;
