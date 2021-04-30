@@ -24,20 +24,19 @@
         
         <a href=#Home><button class="tablink" onclick="openPage('Home', this, 'red')">Home</button></a>
         <a href=#Partite><button class="tablink" onclick="openPage('Partite', this, 'blue')">Partite</button></a>
-        <a href=#Come_Funziona><button class="tablink" onclick="openPage('Come_Funziona', this, 'orange')">Come Funziona</button></a>
+        <a href=#Come_Funziona><button class="tablink" onclick="openPage('Come_Funziona', this, 'green')">Come Funziona</button></a>
         <a href=#Accedi-Registrati><button class="tablink" onclick="openPage('Accedi-Registrati', this, 'orange')">Accedi/Registrati</button></a>
         
         
    
         <div id="Home" class="tabcontent">
             <div class="split_02">
-                <div class="image_homepage"></div>
+                <div class="image_homepage">
+                </div>
                 <form action="ricerca.php" class="form-search" method="POST" name="myForm">
                 
                     <div class="boxes">
-                        <div class="h2">
-
-                        </div>
+                
                         <input type="text" placeholder="Inserisci la Città..."/>
                         <input type="text" placeholder="...Oppure il Centro Sportivo..."/>
     
@@ -58,7 +57,7 @@
                     </div>
 
                 </form>
-
+                <hr>
                 <div class='h2'> 
                     Gestisci un centro sportivo? 
                 </div>
@@ -74,57 +73,36 @@
                         Clicca qui per autenticarti/registrarti ed unirti alla community 
                     </button>
                 </div>
+                <hr>
+                <div class='h2'> 
+                    Prenota il tuo campo sportivo 
+                </div>
 
                 <div>
-                    <div class="boxes">
-                        <div class="column_homepage">
-                            VELOCE          
-                            <br>
-                            Trova rapidamente un campo disponibile nella tua zona e prenota con un clic.    
-                        </div>
-                        <div class="column_homepage">        
-                            GRATUITO
-                            <br>
-                            Nessun costo aggiuntivo in fase di prenotazione.
-                        </div>
-                        <div class="column_homepage">
-                            FACILE
-                            <br>
-                            Basta telefonate ai centri della tua zona, effettua una ricerca e trova il campo migliore per te.
-                        </div>
-                        <div class="column_homepage">
-                            SCONTI
-                            <br>
-                            Sconti fino al 50% rispetto al costo attuato dal campo digagdfgdasgdfagfdgadrgadsfgrettamfsafasdfasdfente.    
-                        </div>
-                    </div>
-
-                    <div class="boxes">
-                        <div class="column_homepage">
-                            #VALUE
-                            <br>
-                            Campi sportivi in Italia    
-                        </div>
-                        <div class="column_homepage">
-                            #VALUE
-                            <br>
-                            Utenti Registrati
-                        </div>
-                        <div class="column_homepage">
-                            #VALUE
-                            <br>
-                            Prenotazioni totali        
-                        </div>
-                        <div class="column_homepage">
-                            #VALUE
-                            <br>
-                            Totale soldi risparmiati
-                        </div>
-                    </div>
+                    VELOCE &rarr; Trova rapidamente un campo disponibile nella tua zona e prenota con un clic.    
+                    <br>
+                    GRATUITO &rarr; Nessun costo aggiuntivo in fase di prenotazione.
+                    <br>
+                    FACILE &rarr; Basta telefonate ai centri della tua zona, effettua una ricerca e trova il campo migliore per te.
+                    <br>
+                    SCONTI &rarr; Sconti fino al 50% rispetto al costo attuato dal campo.    
+                </div>    
+                <hr>
+                <div class='h5'>
                     
-                </div>
-                
-                
+                    <div>    
+                        Campi sportivi in Italia &rarr; #VALUE
+                    </div>
+                    <div>
+                        Utenti Registrati &rarr; #VALUE
+                    </div>
+                    <div>
+                        Prenotazioni totali &rarr; #VALUE  
+                    </div>
+                    <div>
+                        Totale soldi risparmiati &rarr; #VALUE
+                    </div>
+                </div>      
             </div>
         </div>
 
@@ -302,11 +280,9 @@
                             <div class='td'>
                                 <input class="btn-lg btn btn-primary" type="text" name="nome" required placeholder="Inserisci il tuo nome qui..."> 
                             </div>
-                        
                         </div>
                         
                         <div class='tr'>
-                           
                             <div class='td'>
                                 <input class="btn-lg btn btn-primary" type="text" name="cognome" required placeholder="Inserisci il tuo cognome qui..."> 
                             </div>
@@ -316,7 +292,6 @@
                             <div class='td'>
                                 <input class="btn-lg btn btn-primary" type="email" name="email" required placeholder="Inserisci la tua Email qui..." autofocus>
                             </div>
-                        
                         </div>
                         <div class='tr'>
 
@@ -347,10 +322,9 @@
                             </div>
 
                         </div>        
-                        
                     </div>
                 
-                    <button class="btn btn-lg btn-success" name="loginButton" type="submit" onclick="return validaPass();">   
+                    <button class="btn btn-lg btn-success" name="loginButton" type="submit" onclick="return validaPass('password_registrazione', 'password_registrazione_conferma');">   
                         Registrati
                     </button>
 

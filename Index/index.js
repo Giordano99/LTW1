@@ -147,7 +147,7 @@ function validaCercaTime() {
     
 }
 
-function validaPass() {
+function validaPass(password_registrazione, password_registrazione_conferma) {
 
     var password = document.getElementById("password_registrazione")
 
@@ -175,9 +175,7 @@ function validaPass() {
     password.value.includes("_") || password.value.includes("+"))) {
 
         alert('La password deve contenere almeno un simbolo speciale tra i seguenti: ? ! " $ ^ & _ +');
-
         redirectPage("./index.html#Accedi-Registrati")
-
         return false;
     }
 
