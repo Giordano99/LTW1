@@ -1,36 +1,34 @@
 <html>
-<head>
 
-  <script>
- 
-    function togglePassword(el, password){
-    
-     // Checked State
-     var checked = el.checked;
-   
-     if(checked) {
-      // Changing type attribute
-      document.getElementById(password).type = 'text';
-   
-      // Change the Text
-      document.getElementById("toggleText").textContent= "Hide";
-     }
-     else {
-      // Changing type attribute
-      document.getElementById(password).type = 'password';
-   
-      // Change the Text
-      document.getElementById("toggleText").textContent= "Show";
-     }
-   
-    }
-    
-   </script>  
+  <head>
 
-</head>
+    <style>
+
+label {
+ border:1px solid #ccc;
+ padding:10px;
+ margin:0 0 10px;
+ display:block; 
+}
+
+label:hover {
+ background:#eee;
+ cursor:pointer;
+}
+
+    </style>
+
+  </head>
+
 <body>
-  Password :
-  <input type='password' id='passwordf' >
-  <input type='checkbox' id='toggle' value='0' onchange='togglePassword(this, "passwordf");'> <span id='toggleText'>Show
+
+<input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+<label for="checkbox_id">Text</label>
+
+<label><input type="checkbox" />Option 1</label>
+<label><input type="checkbox" />Option 2</label>
+<label><input type="checkbox" />Option 3</label>
+
 </body>
- </html>
+
+</html>
