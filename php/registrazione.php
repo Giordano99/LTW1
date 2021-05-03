@@ -1,7 +1,14 @@
 <?php
 
-require_once("database.php");
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "partitella";
 
+$conn = new mysqli($host,$user,$pass,$db) or die("unable to connect");
+if(!$conn)
+{echo "connessione fallita";}
+echo "connessione al database effettuata";
 
 
     $name = $_POST["nome"];
@@ -9,8 +16,10 @@ require_once("database.php");
     $pass = $_POST["password"];
     $mail = $_POST["email"];
 
-    $query = "insert into utente(nome,cognome,e-mail,password) values ('$name','$cogn','$mail','$pass')";
-     
+    echo "$name"."$cogn"."$pass"."$mail";
+
+   $query = "insert into utente(nome,cognome,email,password) values ('$name','$cogn','$mail','$pass')";
+ 
     if(mysqli_query($conn,$query))
     {
         echo "registrazione effettuata";
