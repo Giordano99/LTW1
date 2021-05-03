@@ -172,6 +172,12 @@ function validaPass(password_registrazione, password_registrazione_conferma) {
 //main function to reset buttons and to open various page
 function openPage(pageName, elmnt, color) {
 
+    /*if (pageName == 'Accedi-Registrati') {
+
+        array = ['login_toggleText', 'registrazione_toggleText']
+        clickHide(array)
+    }*/
+    
     if (pageName == 'Come_Funziona') {
 
         array = ['how_work_prenota', 'how_work_partite', 'how_work_gestione', 'how_work_accesso']
