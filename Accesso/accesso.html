@@ -298,31 +298,31 @@
                 <button class="btn btn-info" onclick="myFunction('profilo')">Click Me</button>
 
                 <div id="profilo">
-                    <form action="roba.php" method="POST" 
+                    <form action="profilo.php" method="POST" 
                     onsubmit="return validaCambioPassword('prima_password', 
                     'seconda_password', 'nome_impostazioni', 
                     'cognome_impostazioni', 'mail_impostazioni')">
                         <div class='table'>
                             <div class='tr'>
                                 <div class='td'>
-                                    <input placeholder="Nuovo Nome..." type="text" id="nome_impostazioni">
+                                    <input placeholder="Nuovo Nome..." type="text" name = "nome" id="nome_impostazioni">
                                 </div>
                             </div>
                             <div class='tr'>
                                 <div class='td'>
-                                    <input placeholder="Nuovo Cognome..." type="text" id="cognome_impostazioni">
+                                    <input placeholder="Nuovo Cognome..." type="text" name ="cognome" id="cognome_impostazioni">
                                 </div>
                             </div>
 
                             <div class='tr'>
                                 <div class='td'>
-                                    <input placeholder="Nuova Mail..." type="mail" id="mail_impostazioni">
+                                    <input placeholder="Nuova Mail..." type="mail" name = "email" id="mail_impostazioni">
                                 </div>
                             </div>
                             
                             <div class='tr'>
                                 <div class='td'>
-                                    <input placeholder="Nuova Password..." type="password" value="" id="prima_password">
+                                    <input placeholder="Nuova Password..." type="password" name ="password" value="" id="prima_password">
                                 </div>
                                 <div class='td'>
                                     &nbsp;

@@ -24,6 +24,7 @@ echo "connessione al database effettuata";
 
     if($row){
         echo " utente già registrato";
+        return false;
     }
     else
     {

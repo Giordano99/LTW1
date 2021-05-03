@@ -1,5 +1,5 @@
-rm -dr /opt/lampp/htdocs/LTW2
+rm -dr /Users/standard/.bitnami/stackman/machines/xampp/volumes/root/htdocs/LTW2 
 
-cp -r /home/debian/Desktop/LTW1 /opt/lampp/htdocs/
+cp -r /Users/standard/Desktop/LTW1 /Users/standard/.bitnami/stackman/machines/xampp/volumes/root/htdocs
 
-mv /opt/lampp/htdocs/LTW1 /opt/lampp/htdocs/LTW2
+mv /Users/standard/.bitnami/stackman/machines/xampp/volumes/root/htdocs/LTW1  /Users/standard/.bitnami/stackman/machines/xampp/volumes/root/htdocs/LTW2 
