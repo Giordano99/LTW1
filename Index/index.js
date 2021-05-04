@@ -186,7 +186,7 @@ function openPage(pageName, elmnt, color) {
 
     if (pageName == 'Home_Accesso') {
         
-        array = ['servizi', 'centro_sportivo', 'sport']
+        array = ['centro_sportivo']
         clickHide(array)
     }
     if (pageName == 'Utente') {

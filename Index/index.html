@@ -34,14 +34,14 @@
             <div class="split_02">
                 <div class="image_homepage">
                 </div>
-                <form action="ricerca.php" class="form-search" method="POST" name="myForm">
+                <form action="../php/ricerca.php" class="form-search" method="POST" name="myForm">
                 
                     <div class="boxes">
                 
-                        <input type="text" placeholder="Inserisci la Città..."/>
+                        <input type="text" name="citta" placeholder="Inserisci la Città..."/>
                         <input type="text" placeholder="...Oppure il Centro Sportivo..."/>
     
-                        <select id="browsers">
+                        <select name="categoria" id="browsers">
                             <option value="CalcioA5">Calcio A5</option>
                             <option value="Beach_Volley">Beach Volley</option>
                             <option value="CALCIOA8">Calcio A8</option>
@@ -49,9 +49,9 @@
                             <option value="Squash">Squash</option>
                         </select>
 
-                        <input type="date" onchange="return validaCerca();" id=e>
+                        <input type="date" name="data" onchange="return validaCerca();" id=e>
 
-                        <input type="time" id=orario onchange="return validaCercaTime();">
+                        <input type="time" name="orario" id=orario onchange="return validaCercaTime();">
 
                         <input class="btn btn-success" type="submit" value="Cerca" onclick="return validaCercaTime();">
                 

@@ -39,13 +39,13 @@
             
             <div class="split_02">
                 <div class="image_homepage"></div>
-                <form action="ricerca.php" class="form-search" method="POST" name="myForm">
+                <form action="../php/ricerca.php" class="form-search" method="POST" name="myForm">
                         
                     <div class="boxes">
-                        <input type="text" placeholder="Inserisci la Città..."/>
-                        <input type="text" placeholder="...Oppure il Centro Sportivo..."/>
+                        <input type="text" name="citta" placeholder="Inserisci la Città..."/>
+                        <input type="text" name="nome" placeholder="...Oppure il Centro Sportivo..."/>
                         
-                        <select id="browsers">
+                        <select name="opzione" id="browsers">
                             <option value="CalcioA5">Calcio A5</option>
                             <option value="Beach_Volley">Beach Volley</option>
                             <option value="CALCIOA8">Calcio A8</option>
@@ -53,9 +53,9 @@
                             <option value="Squash">Squash</option>
                         </select>
 
-                        <input type="date" onchange="return validaCerca();" id=e>
+                        <input type="date" name="data" onchange="return validaCerca();" id=e>
 
-                        <input type="time" id=orario onchange="return validaCercaTime();">
+                        <input type="time" name="orario" id=orario onchange="return validaCercaTime();">
 
                         <input class="btn btn-lg btn-success" type="submit" value="Cerca" onclick="return validaCercaTime();">
                 
@@ -66,58 +66,58 @@
                 <hr>
 
                 <div class='h4'> 
-                    Gestisci un centro sportivo? 
+                    Gestisci un centro sportivo?
                 </div>
                 
                 <button class="btn btn-link btn-info" onclick="myFunction('centro_sportivo')"> 
                     Clicca qui per aggiungere il tuo centro sportivo 
                 </button>
                 <div id="centro_sportivo">
-                    <form action="roba.php" method="POST">
+                    <form action="../php/aggiunta_centro.php" method="POST">
                     
-                        <input type="text" required placeholder="Nome Centro Sportivo...">
+                        <input name="nome" type="text" required placeholder="Nome Centro Sportivo...">
                         <br>
-                        <input type="text" required placeholder="Città Centro Sportivo">
+                        <input name="citta" type="text" required placeholder="Città Centro Sportivo">
                         <br>
-                        <input type="text" required placeholder="Via del Centro Sportivo...">
+                        <input name="indirizzo" type="text" required placeholder="Via del Centro Sportivo...">
                         <br>
-                        <input type="text" required placeholder="Descrizione Centro Sportivo...">
+                        <input name="descrizione" type="text" required placeholder="Descrizione Centro Sportivo...">
                         <br>
-                        <input type="text" required placeholder="Regole Centro Sportivo...">
+                        <input name="regole" type="text" required placeholder="Regole Centro Sportivo...">
                         <br>
 
                         Elenco Servizi:
-                        <button class="btn btn-info" onclick="myFunction('servizi')">Click Me</button>
+                        <!-- <button class="btn btn-info" onclick="myFunction('servizi')">Click Me</button> -->
 
                         <div id="servizi">
                             
                             <br>
-                            <label> <input type="checkbox" value="docce"> Docce </label>
+                            <label> <input type="checkbox" name="servizi[]" value="docce"> Docce </label>
                             <br>
-                            <label> <input type="checkbox" value="ristorante"> Ristorante </label>
+                            <label> <input type="checkbox" name="servizi[]" value="ristorante"> Ristorante </label>
                             <br>
-                            <label> <input type="checkbox" value="bar"> Bar </label>
+                            <label> <input type="checkbox" name="servizi[]" value="bar"> Bar </label>
                             <br>
-                            <label> <input type="checkbox" value="pizzeria"> Pizzeria </label>
+                            <label> <input type="checkbox" name="servizi[]" value="pizzeria"> Pizzeria </label>
                             <br>
-                            <label> <input type="checkbox" value="picnic"> Area Picnic </label>
+                            <label> <input type="checkbox" name="servizi[]" value="area_picnic"> Area Picnic </label>
                             <br>
-                            <label> <input type="checkbox" value="spogliatoi"> Spogliatoi </label>
+                            <label> <input type="checkbox" name="servizi[]" value="spogliatoi"> Spogliatoi </label>
                             <br>
-                            <label> <input type="checkbox" value="casacche"> Casacche </label>
+                            <label> <input type="checkbox" name="servizi[]" value="casacche"> Casacche </label>
                             <br>
-                            <label> <input type="checkbox" value="pub"> Pub </label>
+                            <label> <input type="checkbox" name="servizi[]" value="pub"> Pub </label>
                             <br>
-                            <label> <input type="checkbox" value="parcheggio"> Parcheggio </label>
+                            <label> <input type="checkbox" name="servizi[]" value="parcheggio"> Parcheggio </label>
                             <br>
-                            <label> <input type="checkbox" value="tornei_campionati"> Tornei/Campionati </label>
+                            <label> <input type="checkbox" name="servizi[]" value="tornei_campionati"> Tornei/Campionati </label>
                             <br>
-                            <label> <input type="checkbox" value="sala_feste"> Sala Feste </label>
+                            <label> <input type="checkbox" name="servizi[]" value="sala_feste"> Sala Feste </label>
                                 
                         </div>
                         <br>
                         Elenco Sport:
-                        <button class="btn btn-info" onclick="myFunction('sport')">Click Me</button>
+                        <!-- <button class="btn btn-info" onclick="myFunction('sport')">Click Me</button> -->
 
                         <div id="sport">
                             <br>

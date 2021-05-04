@@ -1,6 +1,5 @@
 <?php
 
-
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -14,12 +13,21 @@ echo "connessione al database effettuata";
 $pass = $_POST["password"];
 $mail = $_POST["email"];
 
-#echo "$mail"."$pass";
-
 $query = "select nome from utente where email = '$mail' and password = '$pass'";
-if(mysqli_query($conn,$query))
-    {
-        echo "login effettuato";
-    }
+if(mysqli_query($conn,$query)) {
+
+    echo "<script>alert('Login Effettuato')</script>";
+    echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";
+    exit();    
+}
+
+else {
+
+    echo "<script>alert('Accesso NEGATO')</script>";
+    echo "<script>window.open('../Index/index.html#Accedi-Registrati','_self')</script>";
+    exit();
+}
 
 echo "$query";
+
+?>
