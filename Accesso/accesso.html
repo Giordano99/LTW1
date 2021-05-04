@@ -42,8 +42,8 @@
                 <form action="../php/ricerca.php" class="form-search" method="POST" name="myForm">
                         
                     <div class="boxes">
-                        <input type="text" name="citta" placeholder="Inserisci la Città..."/>
-                        <input type="text" name="nome" placeholder="...Oppure il Centro Sportivo..."/>
+                        <input type="text" id="citta_accesso" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>
+                        <input type="text" id="centro_sportivo_accesso" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
                         
                         <select name="opzione" id="browsers">
                             <option value="CalcioA5">Calcio A5</option>
@@ -121,15 +121,15 @@
 
                         <div id="sport">
                             <br>
-                            <label> <input type="checkbox" value="calcio_a5"> Calcio A5 </label>
+                            <label> <input type="checkbox" name="sport[]" value="calcio_a5"> Calcio A5 </label>
                             <br>
-                            <label> <input type="checkbox" value="beach_volley"> Beach Volley </label>
+                            <label> <input type="checkbox" name="sport[]" value="beach_volley"> Beach Volley </label>
                             <br>
-                            <label> <input type="checkbox" value="calcio_a8"> Calcio A8 </label>
+                            <label> <input type="checkbox" name="sport[]" value="calcio_a8"> Calcio A8 </label>
                             <br>
-                            <label> <input type="checkbox" value="pizzeria"> Rugby </label>
+                            <label> <input type="checkbox" name="sport[]" value="rugby"> Rugby </label>
                             <br>
-                            <label> <input type="checkbox" value="picnic"> Squash </label>
+                            <label> <input type="checkbox" name="sport[]" value="squash"> Squash </label>
                         </div>
                         <br>
                         <input class="btn btn-lg btn-success" type="submit" value="INVIA">

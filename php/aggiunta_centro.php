@@ -20,35 +20,36 @@
     $descrizione = $_POST["descrizione"];
     $regole = $_POST["regole"];
 
-    $servizi = $_POST['servizi'];
-
-    $array = $servizi;
-    print_r(array_values($array));
-    #echo array_values($array[0]);
-
     $query = "insert into centroSportivo(nome, citta, indirizzo, descrizione, regole, docce, ristorante, bar, pizzeria, area_picnic, spogliatoi, casacche, pub, parcheggio, tornei_campionati, sala_feste, calcio_A5, beach_volley, calcio_A8, rugby, squash) values ('$nome','$citta','$indirizzo','$descrizione', '$regole', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)";
     
     if (mysqli_query($conn,$query)) {
 
+        $servizi = $_POST['servizi'];
+        $array = $servizi;
+
         foreach($array as $key => $value) {
-            
-            $query = "update centroSportivo set $value = 1 where nome = '$nome' and citta = '$citta' and indirizzo = '$indirizzo';";            
-            if (mysqli_query($conn,$query)) {
+    
+            $query2 = "update centroSportivo set $value = 1 where nome = '$nome' and citta = '$citta' and indirizzo = '$indirizzo';";            
+           
 
-                echo "<script>alert('Centro Sportivo Aggiunto con Successo')</script>";
-        
-            }
-            else {
-
-                echo "<script>alert('Centro Sportivo NON Aggiunto')</script>";
+            if (!mysqli_query($conn,$query2)) {
+                echo "<script>alert('op')</script>";
             }
         }
-    }
-    else {
+        
+        $sport = $_POST['sport'];
 
-        echo "<script>alert('Centro Sportivo NON Aggiunto')</script>";
+        foreach($sport as $key => $value) {
+            
+            $query3 = "update centroSportivo set $value = 1 where nome = '$nome' and citta = '$citta' and indirizzo = '$indirizzo';";            
+            if (mysqli_query($conn,$query3)) {
+            
+                echo "<script>alert('Centro Sportivo Aggiunto con Successo')</script>";
+            }
+            else {
+            echo "<script>alert('op')</script>";}
+        }
     }
-    
-    echo "<script>window.open('../Accesso/accesso.html','_self')</script>";
 
+    echo "<script>window.location.href='../Accesso/accesso.html'</script>";
 ?>

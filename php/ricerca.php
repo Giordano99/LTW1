@@ -22,15 +22,17 @@
 
     #echo $citta.$categoria.$data.$orario;
 
+    if (citta != '') {
 
-    $query = "select * from centroSportivo where citta = '$citta'";
+        $query = "select * from centroSportivo where citta = '$citta' and '$opzione' = 1";
+    }
+    //else meanings --> if (nome != '') ...
+    else {
 
+        $query = "select * from centroSportivo where nome = '$nome' and '$opzione' = 1";
+    }
     $risultato = mysqli_query($conn,$query);
     
-
-
-    
-
     ?>
 
     <html>
@@ -57,61 +59,111 @@
 
         </head>
 
-        <body class="text-center" onload="openPage('Home_Accesso', this, 'red')">
-
-            <a href=#Home_Accesso><button class="tablink" onclick="openPage('Home_Accesso', this, 'red')">Home</button></a>
-            <a href=#Partite><button class="tablink" onclick="openPage('Partite', this, 'blue')">Partite</button></a>
-            <a href=#Come_Funziona><button class="tablink" onclick="openPage('Come_Funziona', this, 'green')">Come Funziona</button></a>
-            <a href=#Utente><button class="tablink" onclick="openPage('Utente', this, 'orange')">Impostazioni</button></a>
-
-
-
-
-            <div id="Home_Accesso" class="tabcontent">
-
-                    <div>
-                        $row['nome']
-                        
-                    </div>
-
-
-            </div>
-
-            <div id="Partite" class="tabcontent">
-
-            </div>
-
-            <div id="Come_Funziona" class="tabcontent">
-
-            </div>
-
-            <div id="Utente" class="tabcontent">
-
-            </div>
-
-        </body>
-
-    </html>
-    <?php
-    while ($row = mysqli_fetch_array($risultato)) {
-        echo "<div>";
-        echo '<h2>'.$row['nome'].'</h2>';
-        echo '<h4>'.$row['indirizzo'].'</h4>';
-        echo " ".$row['citta']." ".$row['indirizzo']." ".$row['descrizione']." ".$row['regole'];
-        echo $row['docce']." ".$row['ristorante']." ".$row['bar']." ".$row['pizzeria']." ".$row['area_picnic']." ".$row['spogliatoi']." ".$row['casacche']." ".$row['pub']." ".$row['parcheggio']." ".$row['tornei_campionati']." ".$row['sala_feste']." ".$row['calcio_A5']." ".$row['beach_volley']." ".$row['calcio_A8']." ".$row['rugby']." ".$row['squash'];
+        <body class="text-center">
+       
         
-        echo "</div>";
-        echo "<br>";
+            <?php
+            while ($row = mysqli_fetch_array($risultato)) {
+
+                echo "<div>";
+                echo '<h2>'.$row['nome'].'</h2>';
+                echo '<h4>'.$row['citta'].' -- '.$row['indirizzo'].'</h4>';
+                echo 'Descrizione: '.$row['descrizione'];
+                echo '<br>';
+                echo 'Regole: '.$row['regole'];
+                echo '<br>';
+                echo 'Servizi Disponibili: ';
+                if ($row['docce']) {
+
+                    echo 'Docce'.'--';
+                }
+
+                if ($row['ristorante']) {
+
+                    echo 'Ristorante'.'--';
+                }
+
+                if ($row['bar']) {
+
+                    echo 'Bar'.'--';
+                }
+
+                if ($row['pizzeria']) {
+
+                    echo 'Pizzeria'.'--';
+                }
+
+                if ($row['area_picnic']) {
+
+                    echo 'Area Picnic'.'--';
+                }
+
+                if ($row['spogliatoi']) {
+
+                    echo 'Spogliatoi'.'--';
+                }
+
+                if ($row['casacche']) {
+
+                    echo 'Casacche'.'--';
+                }
+
+                if ($row['pub']) {
+
+                    echo 'Pub'.'--';
+                }
+
+                if ($row['parcheggio']) {
+
+                    echo 'Parcheggio'.'--';
+                }
+
+                if ($row['tornei_campionati']) {
+
+                    echo 'Tornei/Campionati'.'--';
+                }
+
+                if ($row['sala_feste']) {
+
+                    echo 'Sala Feste'.'--';
+                }
+
+                if ($row['calcio_A5']) {
+
+                    echo 'Calcio A5'.'--';
+                }
+
+                if ($row['beach_volley']) {
+
+                    echo 'Beach Volley'.'--';
+                }
+
+                if ($row['calcio_A8']) {
+
+                    echo 'Calcio A8'.'--';
+                }
+
+                if ($row['rugby']) {
+
+                    echo 'Rugby'.'--';
+                }
+
+                if ($row['squash']) {
+
+                    echo 'Squash'.'--';
+                }
+                
+                echo "</div>";
+                echo '<button> PRENOTA </button>';
 
             ?>
-            </body>
+        </body>
         </html>
-<?php
-    }
+        <?php
+            
+            }
+        ?>
 
-?>
-
-<html>
-
-<head>
+    </body>
+</html>
 

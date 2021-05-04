@@ -1,3 +1,30 @@
+//this and the successive function needed to avoid that also city and name are inserted in the form
+function primaCitta(citta, nome) {
+
+    citta = document.getElementById(citta);
+    nome = document.getElementById(nome);
+    if (nome.value != '') {
+
+        alert("Hai già inserito il Centro Sportivo");
+        redirectPage(window.location.href)
+        return false;
+    }
+    return true;
+}
+
+function primaCentro(citta, nome) {
+
+    citta = document.getElementById(citta);
+    nome = document.getElementById(nome);
+    if (citta.value != '') {
+
+        alert("Hai già inserito la Città per la Ricerca");   
+        redirectPage(window.location.href)    
+        return false;
+    }
+    return true;
+}
+
 //function to reset various 'click me', the buttons that show/hide part of web page
 function clickHide(array) {
 
@@ -102,7 +129,7 @@ function validaCerca() {
     if (pickedDate < todaysDate) {
 
         alert("Data Non Valida -- Non si può prenotare un giorno passato")
-        redirectPage('./index.html')
+        redirectPage(window.location.href)
         return false;
     }
 
@@ -124,7 +151,8 @@ function validaCercaTime() {
 
     if (pickedDate <= todaysDate && (time[0] < current.getHours() || time[0] < current.getHours() && time[1] < current.getMinutes())) {
 
-        redirectPage('./index.html')
+        alert("Data ed Ora Non Validi -- Non si può prenotare prima di adesso")
+        redirectPage(window.location.href)
         return false;
     }
 
