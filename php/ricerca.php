@@ -19,18 +19,17 @@
     $data = $_POST["data"];
     $orario = $_POST["orario"];
     $opzione = $_POST["opzione"];
+    
+    if ($nome == '') {
 
-    #echo $citta.$categoria.$data.$orario;
-
-    if (citta != '') {
-
-        $query = "select * from centroSportivo where citta = '$citta' and '$opzione' = 1";
+        $query = "select * from centroSportivo where citta = '$citta' and $opzione = 1";
     }
     //else meanings --> if (nome != '') ...
     else {
 
-        $query = "select * from centroSportivo where nome = '$nome' and '$opzione' = 1";
+        $query = "select * from centroSportivo where nome = '$nome' and $opzione = 1";
     }
+    
     $risultato = mysqli_query($conn,$query);
     
     ?>
