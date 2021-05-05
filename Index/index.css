@@ -100,14 +100,15 @@ table {
     float: left;
     width: 50%;
     padding: 5px;
-    background-color: #777;
+    background-color: rgba(159, 250, 131, 0.884);
+  
 }
 
 .column_registrazione {
     float: right;
     width: 50%;
     padding: 5px;
-    background-color: rgb(6, 172, 214);
+    background-color: rgb(6, 96, 102);
 }
 
 .column_homepage {
@@ -150,19 +151,19 @@ div.image_homepage {
 } 
 
 .split_01 {
-    background-color: #EBEBEB;
+    background-color: #a34747;
 }
 
 .split_02 {
-    background-color: #ABBAEA;
+    background-color: #96d2da;
 }
 
 .split_03 {
-    background-color: #EBEBEB;
+    background-color: #8f4949;
 }
 
 .split_04 {
-    background-color: #ABBAEA;
+    background-color: #304896;
 }
 
 .navbar {

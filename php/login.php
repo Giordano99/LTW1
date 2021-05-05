@@ -16,7 +16,8 @@ $mail = $_POST["email"];
 $query = "select nome from utente where email = '$mail' and password = '$pass'";
 if(mysqli_query($conn,$query)) {
 
-    echo "<script>alert('Login Effettuato')</script>";
+    setcookie("mail","$mail",strtotime("+1 year"));
+    echo "<script>alert('Login Effettuato con e-mail: $_COOKIE[mail]')</script>";
     echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";
     exit();    
 }
