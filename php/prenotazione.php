@@ -1,24 +1,32 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "partitella";
+    $host = "localhost";
+    $user = "root";
+    $pass = "";
+    $db = "partitella";
 
-$conn = new mysqli($host,$user,$pass,$db) or die("unable to connect");
-if(!$conn)
-{echo "connessione fallita";}
-echo "connessione al database effettuata";
+    $conn = new mysqli($host,$user,$pass,$db) or die("unable to connect");
+    if(!$conn) {echo 
 
-$query = "insert into prenotazione(centroSportivo,utente,sport,costo) values
-('pucci','$_COOKIE[mail]','calcio','0')";
-echo $query;
+        "connessione fallita";
+    }
+    else {
 
-if(mysqli_query($conn,$query))
-        {
-            
-            echo "<script>alert('Prenotazione Effettuata')</script>";
-            echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";
-            
-            exit();
-        }
+        echo "connessione al database effettuata";
+    }
+
+
+    $value = $_GET['value']; 
+
+
+    $query = "insert into prenotazione(centroSportivoID,utente,sport) values
+    ('$value','$_COOKIE[mail]','$_COOKIE[opzione]')";
+    
+    if(mysqli_query($conn,$query))
+    {
+                
+        echo "<script>alert('Prenotazione Effettuata')</script>";
+        echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";                
+        exit();
+    }
+?>

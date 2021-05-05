@@ -153,8 +153,26 @@
                 }
                 
                 echo "</div>";
-                echo " <a href='../php/prenotazione.php'><button> PRENOTA </button></a>";
-            
+
+                $control = "select ID from centroSportivo where nome = '$row[nome]' and citta = '$row[citta]' and indirizzo = '$row[indirizzo]'";
+
+                echo $control;
+
+                $valore = mysqli_query($conn,$control);
+
+                $row = mysqli_fetch_array($valore);
+
+                echo $row['ID']."<br>";
+
+
+                setcookie("opzione", "", time()-3600);
+                setcookie("opzione", $opzione);
+                setcookie("opzione", $opzione, time()+3600);  /* expire in 1 hour */
+                #echo "<a href=../php/prenotazione.php?row['ID']=", $row['ID'],"><button> PRENOTA </button></a>";
+                
+                $value = $row['ID'];
+                
+                echo "<a href=../php/prenotazione.php?value=", $value,"><button> PRENOTA </button></a>";
               
             ?>
         </body>
