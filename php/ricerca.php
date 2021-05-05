@@ -153,8 +153,9 @@
                 }
                 
                 echo "</div>";
-                echo '<button> PRENOTA </button>';
-
+                echo " <a href='../php/prenotazione.php'><button> PRENOTA </button></a>";
+            
+              
             ?>
         </body>
         </html>
