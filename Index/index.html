@@ -34,12 +34,12 @@
             <div class="split_02">
                 <div class="image_homepage">
                 </div>
-                <form action="../php/ricerca.php" class="form-search" method="POST" name="myForm">
+                <form action="../php/ricerca_senza_prenotazione.php" class="form-search" method="POST" name="myForm">
                 
                     <div class="boxes">
                 
                         <input type="text" id="citta_index" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>
-                        <input type="text" id="centro_sportivo_index" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
+                        <input type="text" id="centro_sportivo_index" name = "nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
     
                         <select name="categoria" id="browsers">
                             <option value="CalcioA5">Calcio A5</option>
@@ -125,11 +125,11 @@
                 <br>
 
                 <div class="split_02">
-                    <form action="ricerca_singola.php" class="form-search" method="POST" name="myForm">
+                    <form action="../php/ricerca_senza_prenotazione.php" class="form-search" method="POST" name="myForm">
                             
                         <div class="boxes">
-                            <input type="text" placeholder="Inserisci la Città..."/>
-                            <input type="text" placeholder="...Oppure il Centro Sportivo..."/>
+                            <input type="text"  name ="citta" placeholder="Inserisci la Città..."/>
+                            <input type="text"  name = "nome" placeholder="...Oppure il Centro Sportivo..."/>
                            
                             <select id="browsers">
                                 <option value="CalcioA5">Calcio A5</option>

@@ -41,7 +41,7 @@
 
         if(mysqli_query($conn,$query))
         {
-
+            setcookie("mail","$mail",strtotime("+1 year"));
             echo "<script>alert('Registrazione Effettuata')</script>";
             echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";
             
