@@ -73,16 +73,16 @@ function togglePassword(el, password, toggleText){
 
 //function needed to validate that first and second password inserted are equal
 function validaCambioPassword(prima_password, seconda_password, nome_impostazioni, 
-    cognome_impostazioni, mail_impostazioni) {
+    cognome_impostazioni) {
 
     var prima = document.getElementById(prima_password);
     var seconda = document.getElementById(seconda_password)
     var nome = document.getElementById(nome_impostazioni)
     var cognome = document.getElementById(cognome_impostazioni)
-    var mail = document.getElementById(mail_impostazioni)
+    
     
     if (nome.value.length == 0 && cognome.value.length == 0 &&
-        mail.value.length == 0 && prima.value.length == 0 &&
+          prima.value.length == 0 &&
         seconda.value.length == 0) {
 
         alert("Non Si è Modificato Nulla")

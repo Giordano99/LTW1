@@ -3,6 +3,14 @@
 
     <head>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+    $(document).ready(function(){
+    $("button").click(function(){
+    $("#div1").load("../php/ricerca.php");
+        });
+    });
+        </script>   
         <title> Partitella? - Accesso Effettuato </title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width initial-scale=1"/>
@@ -39,8 +47,8 @@
             
             <div class="split_02">
                 <div class="image_homepage"></div>
-                <form action="../php/ricerca.php" class="form-search" method="POST" name="myForm">
-                        
+               <!-- <form action="../php/ricerca.php" class="form-search" method="POST" name="myForm">
+               -->      
                     <div class="boxes">
                         <input type="text" id="citta_accesso" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>
                         <input type="text" id="centro_sportivo_accesso" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
@@ -61,8 +69,12 @@
                 
                     </div>
 
-                </form>
-
+            <!--    </form>
+            -->
+                <div id = "div1">
+                    <h2>Guarda qua</h2>
+                </div>
+                <button>Clicca qui</button>
                 <hr>
 
                 <div class='h4'> 
@@ -303,7 +315,7 @@
                     <form action="../php/profilo.php" method="POST" 
                     onsubmit="return validaCambioPassword('prima_password', 
                     'seconda_password', 'nome_impostazioni', 
-                    'cognome_impostazioni', 'mail_impostazioni')">
+                    'cognome_impostazioni')">
                         <div class='table'>
                             <div class='tr'>
                                 <div class='td'>
@@ -313,12 +325,6 @@
                             <div class='tr'>
                                 <div class='td'>
                                     <input placeholder="Nuovo Cognome..." type="text" name ="cognome" id="cognome_impostazioni">
-                                </div>
-                            </div>
-
-                            <div class='tr'>
-                                <div class='td'>
-                                    <input placeholder="Nuova Mail..." type="mail" name = "email" id="mail_impostazioni">
                                 </div>
                             </div>
                             

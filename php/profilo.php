@@ -14,7 +14,6 @@ echo "connessione al database effettuata";
 $name = $_POST["nome"];
 $cogn = $_POST["cognome"];
 $pass = md5($_POST["password"]);
-$mail = $_POST["email"];
 
 
 if($name){
@@ -53,18 +52,9 @@ if($pass){
 
     }
 }
-if($mail){
 
-    $query4= "UPDATE utente SET email= '$mail' where email = '$_COOKIE[mail]'";
-    if(mysqli_query($conn,$query4))
-    {
-        
-        echo "<script>alert('Modifiche Effettuate')</script>";
-        echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";
-        
-    }
 
-}
+
 exit();
 
 
