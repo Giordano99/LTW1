@@ -22,7 +22,6 @@
     $query = "insert into prenotazione(centroSportivoID,utente,sport) values
     ('$value','$_COOKIE[mail]','$_COOKIE[opzione]')";
     echo $query;
-    echo $conn;
     if(mysqli_query($conn,$query))
     {
                 

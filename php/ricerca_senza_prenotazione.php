@@ -18,7 +18,6 @@
     $nome = $_POST["nome"];
     $data = $_POST["data"];
     $orario = $_POST["orario"];
-    #$opzione = $_POST["opzione"];
     
     if ($nome == '') {
 
@@ -164,15 +163,9 @@
 
                 echo $row['ID']."<br>";
 
-
-                #setcookie("opzione", "", time()-3600);
-                #setcookie("opzione", $opzione);
-                #setcookie("opzione", $opzione, time()+3600);  /* expire in 1 hour */
-                #echo "<a href=../php/prenotazione.php?row['ID']=", $row['ID'],"><button> PRENOTA </button></a>";
                 
                 $value = $row['ID'];
                 
-                #echo "<a href=../php/prenotazione.php?value=", $value,"><button> PRENOTA </button></a>";
               
             ?>
         </body>
