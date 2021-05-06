@@ -96,6 +96,7 @@ function validaCambioPassword(prima_password, seconda_password, nome_impostazion
     var cognome = document.getElementById(cognome_impostazioni)
     
     
+
     if (nome.value.length == 0 && cognome.value.length == 0 &&
           prima.value.length == 0 &&
         seconda.value.length == 0) {
@@ -121,7 +122,8 @@ function validaCambioPassword(prima_password, seconda_password, nome_impostazion
         return false;
     }
 
-    return true;
+    return validaPassModifica(prima_password, seconda_password)
+
 }
 
 //function to redirect to another page automatically (without click with pointer)
@@ -162,7 +164,7 @@ function validaCercaTime() {
     pickedDate = Date.parse(GivenDate.value.replace(/-/g, " "));
     todaysDate = new Date();
     todaysDate.setHours(0, 0, 0, 0);
-    
+
 
     if (pickedDate <= todaysDate && (time[0] < current.getHours() || time[0] <= current.getHours() && time[1] < current.getMinutes())) {
 
@@ -206,6 +208,41 @@ function validaPass(password_registrazione, password_registrazione_conferma) {
 
         alert('Le Due Password NON Coincidono');
         redirectPage("./index.html#Accedi-Registrati")
+        return false;
+    }
+
+   return true;
+}
+
+//function to validate a right password
+function validaPassModifica(password_registrazione, password_registrazione_conferma) {
+
+    var password = document.getElementById(password_registrazione)
+    var password_conferma = document.getElementById(password_registrazione_conferma)
+
+    if (password.value.length == 0) {
+
+        return true;
+    }
+    if (password.value.length < 8) {
+
+        alert("La password deve essere lunga almeno 8 caratteri")           
+        return false;
+    }
+    
+    if (! (password.value.includes("?") || 
+    password.value.includes("!") || password.value.includes('"') ||
+    password.value.includes("$") || password.value.includes("%") ||
+    password.value.includes("^") || password.value.includes("&") ||
+    password.value.includes("_") || password.value.includes("+"))) {
+
+        alert('La password deve contenere almeno un simbolo speciale tra i seguenti: ? ! " $ ^ & _ +');
+        return false;
+    }
+
+    if (password.value !== password_conferma.value) {
+
+        alert('Le Due Password NON Coincidono');
         return false;
     }
 
