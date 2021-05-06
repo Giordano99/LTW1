@@ -1,3 +1,22 @@
+function roba() {
+    var citta_accesso = document.getElementById("citta_accesso")
+    var centro_sportivo_accesso = document.getElementById("centro_sportivo_accesso")
+    var opzione = document.getElementById("browsers")
+    var data = document.getElementById("e")
+    var orario = document.getElementById("orario")
+/*
+    pickedDate = Date.parse(GivenDate.value.replace(/-/g, " "));
+todaysDate = new Date();
+todaysDate.setHours(0, 0, 0, 0);
+
+if (pickedDate < todaysDate) {
+
+alert("Data Non Valida -- Non si può prenotare un giorno passato")**/
+redirectPage("../php/ricerca.php?citta="+citta_accesso.value+"&nome="+ centro_sportivo_accesso.value+ "&data="+ data.value+ "&orario="+ orario.value+ "&opzione="+ opzione.value) 
+
+}
+
+
 //this and the successive function needed to avoid that also city and name are inserted in the form
 function primaCitta(citta, nome) {
 

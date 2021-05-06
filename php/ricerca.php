@@ -14,11 +14,11 @@
     #echo "connessione al database effettuata";
 
 
-    $citta = $_POST["citta"];
-    $nome = $_POST["nome"];
-    $data = $_POST["data"];
-    $orario = $_POST["orario"];
-    $opzione = $_POST["opzione"];
+    $citta = $_GET["citta"];
+    $nome = $_GET["nome"];
+    $data = $_GET["data"];
+    $orario = $_GET["orario"];
+    $opzione = $_GET["opzione"];
     
     if ($nome == '') {
 
@@ -62,8 +62,11 @@
        
         
             <?php
+
+            $i = 0;
             while ($row = mysqli_fetch_array($risultato)) {
 
+                $i = 1;
                 echo "<div>";
                 echo '<h2>'.$row['nome'].'</h2>';
                 echo '<h4>'.$row['citta'].' -- '.$row['indirizzo'].'</h4>';
@@ -179,6 +182,11 @@
         </html>
         <?php
             
+            }
+
+            if ($i == 0) {
+
+                echo "La ricerca non ha tornato alcun risultato, si prega di riprovare";
             }
         ?>
 

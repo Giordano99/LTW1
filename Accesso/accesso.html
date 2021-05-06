@@ -4,13 +4,34 @@
     <head>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+
+
         <script>
-    $(document).ready(function(){
-    $("button").click(function(){
-    $("#div1").load("../php/ricerca.php");
-        });
-    });
-        </script>   
+            $(document).ready(function(){
+              $("button").click(function(){
+                  
+                
+
+                var citta_accesso = $( "#citta_accesso" ).val();
+    var centro_sportivo_accesso = $( "#centro_sportivo_accesso" ).val();
+    var opzione = $( "#browsers" ).val();
+    var data = $( "#e" ).val();
+    var orario = $( "#orario" ).val();
+
+                var singleValues = $( "#single" ).val();
+                
+                $.ajax({url: "../php/ricerca.php?citta="+citta_accesso+"&nome="+ centro_sportivo_accesso+ "&data="+ data+ "&orario="+ orario+ "&opzione="+ opzione, success: function(result){
+                  $("#div1").html(result);
+                }});
+              });
+            });
+            </script>
+
+
+
+
+
         <title> Partitella? - Accesso Effettuato </title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width initial-scale=1"/>
@@ -47,8 +68,11 @@
             
             <div class="split_02">
                 <div class="image_homepage"></div>
-               <!-- <form action="../php/ricerca.php" class="form-search" method="POST" name="myForm">
-               -->      
+
+                
+
+                <!--<form action="../php/ricerca.php" class="form-search" method="GET" name="myForm">
+                -->
                     <div class="boxes">
                         <input type="text" id="citta_accesso" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>
                         <input type="text" id="centro_sportivo_accesso" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
@@ -65,16 +89,27 @@
 
                         <input type="time" name="orario" id=orario onchange="return validaCercaTime();">
 
-                        <input class="btn btn-lg btn-success" type="submit" value="Cerca" onclick="return validaCercaTime();">
-                
                     </div>
 
-            <!--    </form>
-            -->
-                <div id = "div1">
-                    <h2>Guarda qua</h2>
-                </div>
-                <button>Clicca qui</button>
+            <!--        <script>
+                        var el = document.getElementById('a');
+            el.href += '?fruit=apple';
+console.log(el.href); -->
+                   
+                    <button>
+                        <input class="btn btn-lg btn-success" type="submit" value="Cerca">
+                        
+                    </button>
+
+                    <div id = "div1">
+                        <h2>Guarda qua</h2>
+                    </div>
+
+                <!--
+                </form>
+                -->
+                
+
                 <hr>
 
                 <div class='h4'> 
