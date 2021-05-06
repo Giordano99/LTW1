@@ -2,15 +2,7 @@
 <html>
 
     <head>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-    $(document).ready(function(){
-    $("button").click(function(){
-    $("#div1").load("../php/ricerca.php");
-        });
-    });
-        </script>   
+  
         <title> Partitella? - Accesso Effettuato </title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width initial-scale=1"/>
@@ -47,8 +39,8 @@
             
             <div class="split_02">
                 <div class="image_homepage"></div>
-               <!-- <form action="../php/ricerca.php" class="form-search" method="POST" name="myForm">
-               -->      
+               <form action="../php/ricerca.php" class="form-search" method="POST" name="myForm">
+                     
                     <div class="boxes">
                         <input type="text" id="citta_accesso" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>
                         <input type="text" id="centro_sportivo_accesso" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
@@ -69,9 +61,9 @@
                 
                     </div>
 
-            <!--    </form>
-            -->
-                <div id = "div1">
+               </form>
+        
+                <div>
                     <h2>Guarda qua</h2>
                 </div>
                 <button>Clicca qui</button>
@@ -297,16 +289,23 @@
                 </a>
 
                 <hr>
-                Messaggi
+               <!--Storico Prenotazioni
 
-                <button class="btn btn-info" onclick="myFunction('messaggi')">Click Me</button>
+                <button class="btn btn-info" onclick="myFunction('prenotazioni')">Click Me</button>
 
-                <div id="messaggi">
-                    #ELENCO MESSAGGI
+                <div id="prenotazioni">
+                    <a href ="../php/elenco_prenotazioni.php"> <button>Prenotazioni</button></a>
                 </div> 
+                <hr>-->
 
-                <hr>
-
+               Storico Prenotazioni
+               <a href = "../php/elenco_prenotazioni.php">
+               <button class = "btn btn-info" onclick = "myFunction('messaggi')">Click me</button>
+               <div id = "messaggi">
+                   #ELENCO PRENOTAZIONI
+               </div>
+               </a>
+               <hr>
                 Impostazioni Profilo
 
                 <button class="btn btn-info" onclick="myFunction('profilo')">Click Me</button>
