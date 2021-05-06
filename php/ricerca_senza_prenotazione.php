@@ -14,19 +14,30 @@
     #echo "connessione al database effettuata";
 
 
-    $citta = $_POST["citta"];
-    $nome = $_POST["nome"];
-    $data = $_POST["data"];
-    $orario = $_POST["orario"];
+    $citta = $_GET["citta"];
+    $nome = $_GET["nome"];
+    $data = $_GET["data"];
+    $orario = $_GET["orario"];
+    $opzione = $_GET["opzione"];
     
+    
+    $i = 0;
+    if ($citta == '' && $nome == '') {
+
+        $i = 2;
+        echo "<script>alert('Inserire la città o il centro sportivo per la ricerca');</script>";
+    }
+
     if ($nome == '') {
 
-        $query = "select * from centroSportivo where citta = '$citta'" ;
+        
+        $query = "select * from centroSportivo where citta = '$citta' and $opzione = 1";
+        
     }
     //else meanings --> if (nome != '') ...
     else {
 
-        $query = "select * from centroSportivo where nome = '$nome' ";
+        $query = "select * from centroSportivo where nome = '$nome' and $opzione = 1";
     }
     
     $risultato = mysqli_query($conn,$query);
@@ -61,8 +72,11 @@
        
         
             <?php
+
+            
             while ($row = mysqli_fetch_array($risultato)) {
 
+                $i = 1;
                 echo "<div>";
                 echo '<h2>'.$row['nome'].'</h2>';
                 echo '<h4>'.$row['citta'].' -- '.$row['indirizzo'].'</h4>';
@@ -161,17 +175,30 @@
 
                 $row = mysqli_fetch_array($valore);
 
-                echo $row['ID']."<br>";
+               
 
+
+                setcookie("opzione", "", time()-3600);
+                setcookie("opzione", $opzione);
+                setcookie("opzione", $opzione, time()+3600);  /* expire in 1 hour */
+                #echo "<a href=../php/prenotazione.php?row['ID']=", $row['ID'],"><button> PRENOTA </button></a>";
                 
                 $value = $row['ID'];
                 
+                echo "<br>";
+
+                echo "AUTENTICATI PER POTER PRENOTARE";
               
             ?>
         </body>
         </html>
         <?php
             
+            }
+
+            if ($i == 0) {
+
+                echo "La ricerca non ha tornato alcun risultato, si prega di riprovare";
             }
         ?>
 

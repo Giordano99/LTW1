@@ -20,9 +20,19 @@
     $orario = $_GET["orario"];
     $opzione = $_GET["opzione"];
     
+    
+    $i = 0;
+    if ($citta == '' && $nome == '') {
+
+        $i = 2;
+        echo "<script>alert('Inserire la città o il centro sportivo per la ricerca');</script>";
+    }
+
     if ($nome == '') {
 
+        
         $query = "select * from centroSportivo where citta = '$citta' and $opzione = 1";
+        
     }
     //else meanings --> if (nome != '') ...
     else {
@@ -63,7 +73,7 @@
         
             <?php
 
-            $i = 0;
+            
             while ($row = mysqli_fetch_array($risultato)) {
 
                 $i = 1;

@@ -13,9 +13,9 @@
     
     #echo "connessione al database effettuata";
 
-
     
-    $query = "select * from prenotazione where utente = '$_COOKIE[mail]'";
+    $query = "select count(ID) from prenotazione";
+    
     
     
     $risultato = mysqli_query($conn,$query);
@@ -50,9 +50,9 @@
             <?php
             while ($row = mysqli_fetch_array($risultato)) {
 
-                echo "<div>";
-                echo '<h2>'.$row['centroSportivoID'].'</h2>';
-                echo '<h4>'.$row['utente'].' -- '.$row['sport'].'</h4>';
+                
+                echo $row['count(ID)'];
+               # echo '<h4>'.$row['utente'].' -- '.$row['sport'].'</h4>';
                 
             ?>
         </body>
@@ -64,8 +64,3 @@
 
     </body>
 </html>
-
-
-  
-
-    

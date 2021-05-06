@@ -1,19 +1,15 @@
-function roba() {
-    var citta_accesso = document.getElementById("citta_accesso")
-    var centro_sportivo_accesso = document.getElementById("centro_sportivo_accesso")
-    var opzione = document.getElementById("browsers")
-    var data = document.getElementById("e")
-    var orario = document.getElementById("orario")
-/*
-    pickedDate = Date.parse(GivenDate.value.replace(/-/g, " "));
-todaysDate = new Date();
-todaysDate.setHours(0, 0, 0, 0);
+function validaCercaAccesso (citta, nome) {
+    
+    alert("alo");
+    citta = document.getElementById(citta);
+    nome = document.getElementById(nome);
 
-if (pickedDate < todaysDate) {
+    
+    if (citta.value == "" && nome.value == "") {
 
-alert("Data Non Valida -- Non si può prenotare un giorno passato")**/
-redirectPage("../php/ricerca.php?citta="+citta_accesso.value+"&nome="+ centro_sportivo_accesso.value+ "&data="+ data.value+ "&orario="+ orario.value+ "&opzione="+ opzione.value) 
-
+        alert("Inserire la città o il centro sportivo per la ricerca");
+        redirectPage(window.location.href)
+    }
 }
 
 
@@ -148,7 +144,7 @@ function validaCerca() {
     if (pickedDate < todaysDate) {
 
         alert("Data Non Valida -- Non si può prenotare un giorno passato")
-        redirectPage(window.location.href)
+        redirectPage("./index.html")
         return false;
     }
 
@@ -166,12 +162,12 @@ function validaCercaTime() {
     pickedDate = Date.parse(GivenDate.value.replace(/-/g, " "));
     todaysDate = new Date();
     todaysDate.setHours(0, 0, 0, 0);
+    
 
-
-    if (pickedDate <= todaysDate && (time[0] < current.getHours() || time[0] < current.getHours() && time[1] < current.getMinutes())) {
+    if (pickedDate <= todaysDate && (time[0] < current.getHours() || time[0] <= current.getHours() && time[1] < current.getMinutes())) {
 
         alert("Data ed Ora Non Validi -- Non si può prenotare prima di adesso")
-        redirectPage(window.location.href)
+        redirectPage("./index.html")
         return false;
     }
 
@@ -233,7 +229,7 @@ function openPage(pageName, elmnt, color) {
 
     if (pageName == 'Home_Accesso') {
         
-        array = ['centro_sportivo']
+        array = ['centro_sportivo', 'servizi', 'sport']
         clickHide(array)
     }
     if (pageName == 'Utente') {

@@ -4,7 +4,7 @@
     <head>
 
 
-        
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
@@ -12,24 +12,57 @@
 
         <script>
             $(document).ready(function(){
-              $("button").click(function(){
+                $("#button_ajax_home_accesso").click(function(){
                   
-                
-
-                var citta_accesso = $( "#citta_accesso" ).val();
-    var centro_sportivo_accesso = $( "#centro_sportivo_accesso" ).val();
-    var opzione = $( "#browsers" ).val();
-    var data = $( "#e" ).val();
-    var orario = $( "#orario" ).val();
-
-                var singleValues = $( "#single" ).val();
-                
-                $.ajax({url: "../php/ricerca.php?citta="+citta_accesso+"&nome="+ centro_sportivo_accesso+ "&data="+ data+ "&orario="+ orario+ "&opzione="+ opzione, success: function(result){
-                  $("#div1").html(result);
-                }});
-              });
+                    var citta_accesso = $( "#citta_accesso" ).val();
+                    var centro_sportivo_accesso = $( "#centro_sportivo_accesso" ).val();
+                    var opzione = $( "#browsers" ).val();
+                    var data = $( "#e" ).val();
+                    var orario = $( "#orario" ).val();
+                    
+                    $.ajax({url: "../php/ricerca.php?citta="+citta_accesso+"&nome="+ centro_sportivo_accesso+ "&data="+ data+ "&orario="+ orario+ "&opzione="+ opzione, success: function(result){
+                        $("#div1").html(result);
+                    }});
+                });
             });
-            </script>
+
+            $(document).ready(function(){
+                $("#button_storico_prenotazioni").click(function(){
+                    
+                    $.ajax({url: "../php/elenco_prenotazioni.php", success: function(result){
+                        $("#div2").html(result);
+                    }});
+                });
+            });
+
+            $(document).ready(function(){
+                $("#button_campi_sportivi_Italia").click(function(){
+                    
+                    $.ajax({url: "../php/campi_sportivi_Italia.php", success: function(result){
+                        $("#campi_sportivi_Italia").html(result);
+                    }});
+                });
+            });
+
+            $(document).ready(function(){
+                $("#button_utenti_registrati").click(function(){
+                    
+                    $.ajax({url: "../php/utenti_registrati.php", success: function(result){
+                        $("#utenti_registrati").html(result);
+                    }});
+                });
+            });
+
+            $(document).ready(function(){
+                $("#button_prenotazioni_totali").click(function(){
+                    
+                    $.ajax({url: "../php/prenotazioni_totali.php", success: function(result){
+                        $("#prenotazioni_totali").html(result);
+                    }});
+                });
+            });
+
+        </script>
 
 
 
@@ -73,12 +106,6 @@
             <div class="split_02">
                 <div class="image_homepage"></div>
 
-
-                
-
-                <!--<form action="../php/ricerca.php" class="form-search" method="GET" name="myForm">
-                -->
-
                     <div class="boxes">
                         <input type="text" id="citta_accesso" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>
                         <input type="text" id="centro_sportivo_accesso" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
@@ -96,26 +123,14 @@
                         <input type="time" name="orario" id=orario onchange="return validaCercaTime();">
 
                     </div>
-
-
-            <!--        <script>
-                        var el = document.getElementById('a');
-            el.href += '?fruit=apple';
-console.log(el.href); -->
                    
-                    <button>
-                        <input class="btn btn-lg btn-success" type="submit" value="Cerca">
-                        
+                    <button id="button_ajax_home_accesso" class="btn btn-lg btn-success" value="Cerca">
+                        CERCA
                     </button>
 
                     <div id = "div1">
-                        <h2>Guarda qua</h2>
+    
                     </div>
-
-                <!--
-                </form>
-                -->
-                
 
 
                 <hr>
@@ -142,7 +157,7 @@ console.log(el.href); -->
                         <br>
 
                         Elenco Servizi:
-                        <!-- <button class="btn btn-info" onclick="myFunction('servizi')">Click Me</button> -->
+                        <button class="btn btn-info" onclick="myFunction('servizi')">Click Me</button>
 
                         <div id="servizi">
                             
@@ -172,7 +187,7 @@ console.log(el.href); -->
                         </div>
                         <br>
                         Elenco Sport:
-                        <!-- <button class="btn btn-info" onclick="myFunction('sport')">Click Me</button> -->
+                        <button class="btn btn-info" onclick="myFunction('sport')">Click Me</button>
 
                         <div id="sport">
                             <br>
@@ -210,17 +225,27 @@ console.log(el.href); -->
                 <div class='h5'>
                     
                     <div>    
-                        Campi sportivi in Italia &rarr; #VALUE
+                        Campi sportivi in Italia &rarr; 
+                        
+                        <span id = 'campi_sportivi_Italia'>
+                            <button class="btn btn-info" id="button_campi_sportivi_Italia">Scoprili</button>
+                        </span>
                     </div>
                     <div>
-                        Utenti Registrati &rarr; #VALUE
+                        Utenti Registrati &rarr;
+
+                        <span id = 'utenti_registrati'>
+                            <button class="btn btn-info" id="button_utenti_registrati">Scoprili</button>
+                        </span>
                     </div>
                     <div>
-                        Prenotazioni totali &rarr; #VALUE  
+                        Prenotazioni totali &rarr;
+
+                        <span id = 'prenotazioni_totali'>
+                            <button class="btn btn-info" id="button_prenotazioni_totali">Scoprili</button>
+                        </span>
                     </div>
-                    <div>
-                        Totale soldi risparmiati &rarr; #VALUE
-                    </div>
+    
                 </div>   
 
             </div>
@@ -339,7 +364,6 @@ console.log(el.href); -->
     
                 </a>
 
-                <hr>
                <!--Storico Prenotazioni
 
                 <button class="btn btn-info" onclick="myFunction('prenotazioni')">Click Me</button>
@@ -349,14 +373,25 @@ console.log(el.href); -->
                 </div> 
                 <hr>-->
 
-               Storico Prenotazioni
-               <a href = "../php/elenco_prenotazioni.php">
-               <button class = "btn btn-info" onclick = "myFunction('messaggi')">Click me</button>
-               <div id = "messaggi">
-                   #ELENCO PRENOTAZIONI
-               </div>
-               </a>
-               <hr>
+                <hr>
+                Storico Prenotazioni
+                <button id="button_storico_prenotazioni" onclick = "myFunction('div2')" class="btn btn-info" value="Click me">
+                    Click me
+                </button>
+
+                <div id = "div2">
+
+                </div>
+
+                <hr>
+                Storico Prenotazioni
+                <a href = "../php/elenco_prenotazioni.php">
+                <button class = "btn btn-info" onclick = "myFunction('messaggi')">Click me</button>
+                <div id = "messaggi">
+                    #ELENCO PRENOTAZIONI
+                </div>
+                </a>
+                <hr>
                 Impostazioni Profilo
 
                 <button class="btn btn-info" onclick="myFunction('profilo')">Click Me</button>

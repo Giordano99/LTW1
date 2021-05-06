@@ -6,10 +6,14 @@ $pass = "";
 $db = "partitella";
 
 $conn = new mysqli($host,$user,$pass,$db) or die("unable to connect");
-if(!$conn)
-{echo "connessione fallita";}
-echo "connessione al database effettuata";
+if(!$conn) {
 
+    echo "connessione fallita";
+}
+else {
+
+    echo "connessione al database effettuata";
+}
 
 $name = $_POST["nome"];
 $cogn = $_POST["cognome"];
