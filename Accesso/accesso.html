@@ -77,7 +77,7 @@
 
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 
-        <link rel="stylesheet" type="type/css" href="style.css"/>
+        <!--<link rel="stylesheet" type="type/css" href="style.css"/>-->
         <script type="text/javascript" lang="javascript"
         src="../js/bootstrap.min.js"></script>
         <!-- <script type="text/javascript" lang="javascript" src="script.js"></script> -->
@@ -157,7 +157,7 @@
                         <br>
 
                         Elenco Servizi:
-                        <button class="btn btn-info" onclick="myFunction('servizi')">Click Me</button>
+                        <button type="button" class="btn btn-info" onclick="myFunction('servizi')">Click Me</button>
 
                         <div id="servizi">
                             
@@ -187,7 +187,7 @@
                         </div>
                         <br>
                         Elenco Sport:
-                        <button class="btn btn-info" onclick="myFunction('sport')">Click Me</button>
+                        <button type="button" class="btn btn-info" onclick="myFunction('sport')">Click Me</button>
 
                         <div id="sport">
                             <br>
@@ -375,14 +375,17 @@
                 </div>
 
                 <hr>
-                Storico Prenotazioni
-                <a href = "../php/elenco_prenotazioni.php">
-                <button class = "btn btn-info" onclick = "myFunction('messaggi')">Click me</button>
+                
+                
+                <!--  DA QUI NON SI VEDE  -->
+                
                 <div id = "messaggi">
-                    #ELENCO PRENOTAZIONI
+                    
                 </div>
-                </a>
-                <hr>
+                
+                <!--  FIN QUI NON SI VEDE  -->
+
+
                 Impostazioni Profilo
 
                 <button class="btn btn-info" onclick="myFunction('profilo')">Click Me</button>
@@ -400,7 +403,7 @@
                             </div>
                             <div class='tr'>
                                 <div class='td'>
-                                    <input placeholder="Nuovo Cognome..." type="text" name ="cognome" id="cognome_impostazioni">
+                                    <input placeholder="Nuovo Cognome..." type="text" name ="cognome" id="cognome_impostazioni" value="" />
                                 </div>
                             </div>
                             

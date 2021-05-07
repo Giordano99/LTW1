@@ -50,9 +50,19 @@
             <?php
             while ($row = mysqli_fetch_array($risultato)) {
 
-                echo "<div>";
-                echo '<h2>'.$row['centroSportivoID'].'</h2>';
-                echo '<h4>'.$row['utente'].' -- '.$row['sport'].'</h4>';
+                $second_query = "select * from centroSportivo where ID = $row[centroSportivoID]";
+                $results = mysqli_query($conn,$second_query);
+        
+                //ID unique so only one row resulted
+                $riga = mysqli_fetch_array($results);
+                
+                echo '<hr style="border: 1px dashed black;" />';
+                echo '<h1>'.'Nome Centro Sportivo: '.$riga['nome'].'</h2>';
+                echo '<h2>'.'Città: '.$riga['citta'].'</h3>';
+                echo '<h3>'.'Indirizzo: '.$riga['indirizzo'].'</h4>';
+                echo '<h4>'.'Sport prenotato: '.$row['sport'].'</h4>';
+                echo '<h5>'.'Prenotazione a nome di: '.$row['utente'].'</h5>';
+                
                 
             ?>
         </body>

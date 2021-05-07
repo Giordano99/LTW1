@@ -271,7 +271,8 @@ function openPage(pageName, elmnt, color) {
     }
     if (pageName == 'Utente') {
         
-        array = ['messaggi', 'profilo', 'conto', 'assistenza']
+        array = ['div2', 'profilo', 'conto', 'assistenza']
+        //document.getElementById('cognome_impostazioni').defaultValue = ""
         clickHide(array)
     }
 
