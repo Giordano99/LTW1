@@ -17,11 +17,13 @@
 
 
     $value = $_GET['value']; 
+    $data = $_GET['data'];
+    $orario = $_GET['orario'];
 
-    echo $value;
+    echo $value."<br>".$data;
     $query = "insert into prenotazione(centroSportivoID,utente,sport) values
     ('$value','$_COOKIE[mail]','$_COOKIE[opzione]')";
-    echo $query;
+    
     if(mysqli_query($conn,$query))
     {
                 

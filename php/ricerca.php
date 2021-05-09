@@ -85,98 +85,97 @@
                 echo 'Regole: '.$row['regole'];
                 echo '<br>';
                 echo 'Servizi Disponibili: ';
+
                 if ($row['docce']) {
 
-                    echo 'Docce'.'--';
+                    echo '<img src="https://image.flaticon.com/icons/png/512/93/93958.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['ristorante']) {
 
-                    echo 'Ristorante'.'--';
+                    echo '<img src="https://img.icons8.com/material/452/restaurant--v1.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['bar']) {
 
-                    echo 'Bar'.'--';
+                    echo '<img src="https://img.icons8.com/ios/452/cafe.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['pizzeria']) {
 
-                    echo 'Pizzeria'.'--';
+                    echo '<img src="https://img.icons8.com/ios/452/pizza.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['area_picnic']) {
 
-                    echo 'Area Picnic'.'--';
+                    echo '<img src="https://img.icons8.com/ios/452/picnic-table.png" style="width:64px;height:64px';
                 }
 
                 if ($row['spogliatoi']) {
 
-                    echo 'Spogliatoi'.'--';
+                    echo '<img src="https://img.icons8.com/ios/452/drawer.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['casacche']) {
 
-                    echo 'Casacche'.'--';
+                    echo '<img src="https://img.icons8.com/small/452/vest.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['pub']) {
 
-                    echo 'Pub'.'--';
+                    echo '    <img src="https://img.icons8.com/ios/452/poolside-bar.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['parcheggio']) {
 
-                    echo 'Parcheggio'.'--';
+                    echo '<img src="https://img.icons8.com/ios/452/outdoor-parking.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['tornei_campionati']) {
 
-                    echo 'Tornei/Campionati'.'--';
+                    echo '<img src="https://img.icons8.com/ios/452/tournament-mode.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['sala_feste']) {
 
-                    echo 'Sala Feste'.'--';
+                    echo '<img src="https://img.icons8.com/ios/452/party-baloons.png" style="width:64px;height:64px;">                    ';
                 }
+
+                echo '<br>';
+                echo 'Sport Disponibili: ';
 
                 if ($row['calcio_A5']) {
 
-                    echo 'Calcio A5'.'--';
+                    echo '<img src="https://img.icons8.com/metro/452/5.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['beach_volley']) {
 
-                    echo 'Beach Volley'.'--';
+                    echo '<img src="https://img.icons8.com/ios/452/volleyball--v2.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['calcio_A8']) {
 
-                    echo 'Calcio A8'.'--';
+                    echo '<img src="https://img.icons8.com/windows/452/8.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['rugby']) {
 
-                    echo 'Rugby'.'--';
+                    echo '<img src="https://img.icons8.com/metro/452/rugby.png" style="width:64px;height:64px;">';
                 }
 
                 if ($row['squash']) {
 
-                    echo 'Squash'.'--';
+                    echo '<img src="https://img.icons8.com/ios/452/squash-racquet.png" style="width:64px;height:64px;">';
                 }
                 
                 echo "</div>";
 
                 $control = "select ID from centroSportivo where nome = '$row[nome]' and citta = '$row[citta]' and indirizzo = '$row[indirizzo]'";
 
-                echo $control;
-
                 $valore = mysqli_query($conn,$control);
 
                 $row = mysqli_fetch_array($valore);
-
-                echo $row['ID']."<br>";
-
 
                 setcookie("opzione", "", time()-3600);
                 setcookie("opzione", $opzione);
@@ -185,7 +184,7 @@
                 
                 $value = $row['ID'];
                 
-                echo "<a href=../php/prenotazione.php?value=", $value,"><button> PRENOTA </button></a>";
+                echo "<a href=../php/prenotazione.php?value=", $value,"&data=", $data,"&orario=", $orario,"><button> PRENOTA </button></a>";
               
             ?>
         </body>

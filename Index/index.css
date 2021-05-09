@@ -99,6 +99,7 @@ table {
 .column_login {
     float: left;
     width: 50%;
+    height: 1000px;
     padding: 5px;
     background-color: rgba(159, 250, 131, 0.884);
   
@@ -107,6 +108,7 @@ table {
 .column_registrazione {
     float: right;
     width: 50%;
+    height: 1000px;
     padding: 5px;
     background-color: rgb(6, 96, 102);
 }
@@ -129,11 +131,11 @@ table {
     text-decoration: none;
     background: gold;
     color: #000;
-  }
+}
    
-  .boxes button:nth-of-type(even) {
+.boxes button:nth-of-type(even) {
     background: #e6c200;
-  }
+}
 
 /* Clear floats after image containers */
 .row::after {
@@ -275,3 +277,31 @@ label {
   background:#eee;
   cursor:pointer;
  }
+
+ .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.size_of_img{
+  width:90px
+}
