@@ -36,9 +36,9 @@
         if ($rowcount > 0) {
             
             setcookie("mail", $mail);
-            setcookie("mail", $mail, time()+3600);  /* expire in 1 hour */
+            setcookie("mail", $mail, time()+3600,"/");  /* expire in 1 hour */
             echo "<script>alert('Login Effettuato con e-mail: $mail')</script>";
-            echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";
+            echo "<script>window.open('../Accesso/accesso.php#Home_Accesso','_self')</script>";
             exit();  
         }
         else {
