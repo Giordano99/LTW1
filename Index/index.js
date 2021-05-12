@@ -319,7 +319,7 @@ function openPage(pageName, elmnt, color) {
 
     if (pageName == 'Home_Accesso') {
         
-        document.getElementById('check_value').value = 1;
+        document.getElementById('check_value').value = 0;
         document.getElementById('check').checked = "";
         array = ['centro_sportivo', 'servizi', 'sport', 'check']
         clickHide(array)

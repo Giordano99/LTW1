@@ -19,7 +19,7 @@
     $data = $_GET["data"];
     $orario = $_GET["orario"];
     $opzione = $_GET["opzione"];
-    
+    $check_value = $_GET["check_value"];
     
     $i = 0;
     if ($citta == '' && $nome == '') {
@@ -171,9 +171,6 @@
                 
                 echo "</div>";
 
-                
-
-
                 $control = "select ID from centroSportivo where nome = '$row[nome]' and citta = '$row[citta]' and indirizzo = '$row[indirizzo]'";
 
                 $valore = mysqli_query($conn,$control);
@@ -187,7 +184,7 @@
                 
                 $value = $row['ID'];
                 
-                echo "<a href=../php/prenotazione.php?value=", $value,"&data=", $data,"&orario=", $orario,"><button> PRENOTA </button></a>";
+                echo "<a href=../php/prenotazione.php?value=", $value,"&data=", $data,"&orario=", $orario,"&check_value=", $check_value,"><button> PRENOTA </button></a>";
               
             ?>
         </body>
@@ -204,4 +201,3 @@
 
     </body>
 </html>
-

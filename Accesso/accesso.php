@@ -14,8 +14,9 @@
                     var opzione = $( "#browsers" ).val();
                     var data = $( "#e" ).val();
                     var orario = $( "#orario" ).val();
+                    var check_value = $( "#check_value" ).val();
                     
-                    $.ajax({url: "../php/ricerca.php?citta="+citta_accesso+"&nome="+ centro_sportivo_accesso+ "&data="+ data+ "&orario="+ orario+ "&opzione="+ opzione, success: function(result){
+                    $.ajax({url: "../php/ricerca.php?citta="+citta_accesso+"&nome="+ centro_sportivo_accesso+ "&data="+ data+ "&orario="+ orario+ "&opzione="+ opzione+ "&check_value="+ check_value, success: function(result){
                         $("#div1").html(result);
                     }});
                 });
@@ -129,7 +130,7 @@
             
                         <div id="check">
                             
-                            Quanti Giocatori Mancano?: <input id="check_value" type="number" value=1 onchange="verifyPlayers('check_value', 'browsers');">
+                            Quanti Giocatori Mancano?: <input id="check_value" type="number" value=0 onchange="verifyPlayers('check_value', 'browsers');">
             
                         </div>
             
@@ -142,7 +143,6 @@
                     <div id = "div1">
     
                     </div>
-
 
                 <hr>
 
