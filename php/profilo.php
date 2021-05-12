@@ -27,7 +27,7 @@ if($name){
         {
             
             echo "<script>alert('Modifiche Effettuate')</script>";
-            echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";
+            echo "<script>window.open('../Accesso/accesso.php#Home_Accesso','_self')</script>";
             
         }
 
@@ -39,7 +39,7 @@ if($cogn){
         {
             
             echo "<script>alert('Modifiche Effettuate')</script>";
-            echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";
+            echo "<script>window.open('../Accesso/accesso.php#Home_Accesso','_self')</script>";
             
         }
 
@@ -51,7 +51,7 @@ if($pass){
     {
         
         echo "<script>alert('Modifiche Effettuate')</script>";
-        echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";
+        echo "<script>window.open('../Accesso/accesso.php#Home_Accesso','_self')</script>";
         
 
     }

@@ -43,7 +43,7 @@
         {
             setcookie("mail","$mail",strtotime("+1 year"));
             echo "<script>alert('Registrazione Effettuata')</script>";
-            echo "<script>window.open('../Accesso/accesso.html#Home_Accesso','_self')</script>";
+            echo "<script>window.open('../Accesso/accesso.php#Home_Accesso','_self')</script>";
             
             exit();
         }

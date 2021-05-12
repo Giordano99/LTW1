@@ -31,7 +31,7 @@
         #echo "utente già registrato";
         
         echo "<script>alert('Centro Sportivo già Registrato')</script>";
-        echo "<script>window.open('../Accesso/accesso.html','_self')</script>";
+        echo "<script>window.open('../Accesso/accesso.php','_self')</script>";
         
         
         exit();
@@ -69,5 +69,5 @@
             }
         }
     }
-    echo "<script>window.location.href='../Accesso/accesso.html'</script>";
+    echo "<script>window.location.href='../Accesso/accesso.php'</script>";
 ?>

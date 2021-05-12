@@ -86,13 +86,12 @@
         <a href=#Home_Accesso><button class="tablink" onclick="openPage('Home_Accesso', this, 'red')">Home</button></a>
         <a href=#Partite><button class="tablink" onclick="openPage('Partite', this, 'blue')">Partite</button></a>
         <a href=#Come_Funziona><button class="tablink" onclick="openPage('Come_Funziona', this, 'green')">Come Funziona</button></a>
-        <a href=#Utente><button class="tablink" onclick="openPage('Utente', this, 'orange')">Impostazioni</button></a>
+        <a href=#Utente><button class="tablink" onclick="openPage('Utente', this, 'orange')"><?php echo "Impostazioni - $_COOKIE[mail]"?></button></a>
         
         
 
    
         <div id="Home_Accesso" class="tabcontent">
-            
             <div class="split_02">
 
                 <div id = "app">
