@@ -60,7 +60,7 @@
         src="../js/bootstrap.min.js"></script>
         <!-- <script type="text/javascript" lang="javascript" src="script.js"></script> -->
         <script type="text/javascript" src="./index.js"></script>
-    
+        <script type="text/javascript" src="../vue/vue.min.js"></script>
     </head>
 
     <body class="text-center" onload="openPage('Home', this, 'red')">
@@ -71,10 +71,24 @@
         <a href=#Accedi-Registrati><button class="tablink" onclick="openPage('Accedi-Registrati', this, 'orange')">Accedi/Registrati</button></a>
         
         <div id="Home" class="tabcontent">
-            <div class="split_02">
-                <div class="image_homepage">
-                </div>
             
+            <div class="split_02">
+            
+                <div id = "app">
+
+                    <div  class="product=image">
+                        <img v-bind:src="image" width="600" height="300"/>
+                    </div>
+                
+                    <span v-for="x in variants" :key="x.id" class ="color-box">
+                        <button class="btn btn-lg btn-primary" v-on:click="updateImage(x.image)">{{x.sport}}</button>
+                    </span>
+                    
+                </div>
+                <script type="text/javascript" src="../vue/prova.js"></script>
+
+                <hr>
+
                 <div class="boxes">
             
                     <input type="text" id="citta_accesso" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>

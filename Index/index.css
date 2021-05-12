@@ -144,12 +144,20 @@ table {
     display: table;
 } 
 
+
+
 div.image_homepage {
-    content:url(https://cdn1.sportngin.com/attachments/photo/1040/6534/Soccer_Field_large.jpg);
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
-    width: 60%;
+    width: 22px;
+} 
+
+image_homepage {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  width: 22px;
 } 
 
 .split_01 {

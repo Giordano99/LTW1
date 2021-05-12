@@ -77,7 +77,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+        <script type="text/javascript" src="../vue/vue.min.js"></script>
 
     </head>
     
@@ -94,8 +94,23 @@
         <div id="Home_Accesso" class="tabcontent">
             
             <div class="split_02">
-                <div class="image_homepage"></div>
 
+                <div id = "app">
+
+                    <div  class="product=image">
+                        <img v-bind:src="image" width="600" height="300"/>
+                    </div>
+                
+                    <span v-for="x in variants" :key="x.id" class ="color-box">
+                        <button class="btn btn-lg btn-primary" v-on:click="updateImage(x.image)">{{x.sport}}</button>
+                    </span>
+                    
+                </div>
+                <script type="text/javascript" src="../vue/prova.js"></script>
+
+                <hr>
+
+                
                     <div class="boxes">
                         <input type="text" id="citta_accesso" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>
                         <input type="text" id="centro_sportivo_accesso" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
