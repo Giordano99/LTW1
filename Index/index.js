@@ -1,6 +1,58 @@
+function verifyPlayers(giocatori, opzione) {
+
+    giocatori = document.getElementById(giocatori).value;
+    opzione = document.getElementById(opzione).value;
+    if (opzione == 'calcio_A5') {
+
+        if (giocatori > 10) {
+
+            alert("Mancano Troppi Giocatori");
+            redirectPage("./accesso.html")
+        }
+    }
+    if (opzione == 'beach_volley') {
+
+        if (giocatori > 4) {
+
+            alert("Mancano Troppi Giocatori");
+            redirectPage("./accesso.html")
+        }
+        
+    }
+    if (opzione == 'calcio_A8') {
+
+        if (giocatori > 16) {
+
+            alert("Mancano Troppi Giocatori");
+            redirectPage("./accesso.html")
+        }
+    }
+    if (opzione == 'rugby') {
+
+        if (giocatori > 30) {
+
+            alert("Mancano Troppi Giocatori");
+            redirectPage("./accesso.html")
+        }
+    }
+    if (opzione == 'squash') {
+
+        if (giocatori > 4) {
+
+            alert("Mancano Troppi Giocatori");
+            redirectPage("./accesso.html")
+        }
+    }
+}
+
+function showInput() {
+
+    document.getElementById('display').innerHTML = 
+    document.getElementById('check_value').value; 
+}
+
 function validaCercaAccesso (citta, nome) {
     
-    alert("alo");
     citta = document.getElementById(citta);
     nome = document.getElementById(nome);
 
@@ -54,6 +106,7 @@ function clickHide(array) {
 
 //function needed to show/hide part of html page
 function myFunction(id) {
+
     var x = document.getElementById(id);
     if (x.style.display === "none") {
         x.style.display = "block";
@@ -266,7 +319,9 @@ function openPage(pageName, elmnt, color) {
 
     if (pageName == 'Home_Accesso') {
         
-        array = ['centro_sportivo', 'servizi', 'sport']
+        document.getElementById('check_value').value = 1;
+        document.getElementById('check').checked = "";
+        array = ['centro_sportivo', 'servizi', 'sport', 'check']
         clickHide(array)
     }
     if (pageName == 'Utente') {

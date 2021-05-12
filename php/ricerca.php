@@ -171,6 +171,9 @@
                 
                 echo "</div>";
 
+                
+
+
                 $control = "select ID from centroSportivo where nome = '$row[nome]' and citta = '$row[citta]' and indirizzo = '$row[indirizzo]'";
 
                 $valore = mysqli_query($conn,$control);

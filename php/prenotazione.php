@@ -6,9 +6,9 @@
     $db = "partitella";
 
     $conn = new mysqli($host,$user,$pass,$db) or die("unable to connect");
-    if(!$conn) {echo 
-
-        "connessione fallita";
+    if(!$conn) {
+        
+        echo "connessione fallita";
     }
     else {
 
@@ -20,10 +20,10 @@
     $data = $_GET['data'];
     $orario = $_GET['orario'];
 
-    echo $value."<br>".$data;
-    $query = "insert into prenotazione(centroSportivoID,utente,sport) values
-    ('$value','$_COOKIE[mail]','$_COOKIE[opzione]')";
+    $query = "insert into prenotazione(centroSportivoID,utente,sport, data_gioco, orario) 
+    values ('$value','$_COOKIE[mail]','$_COOKIE[opzione]', '$data', '$orario')";
     
+    echo $query;
     if(mysqli_query($conn,$query))
     {
                 
