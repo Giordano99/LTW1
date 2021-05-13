@@ -76,119 +76,140 @@
             
             while ($row = mysqli_fetch_array($risultato)) {
 
-                $i = 1;
-                echo "<div>";
-                echo '<h2>'.$row['nome'].'</h2>';
-                echo '<h4>'.$row['citta'].' -- '.$row['indirizzo'].'</h4>';
-                echo 'Descrizione: '.$row['descrizione'];
-                echo '<br>';
-                echo 'Regole: '.$row['regole'];
-                echo '<br>';
-                echo 'Servizi Disponibili: ';
-                if ($row['docce']) {
+                $query2 = "select * from prenotazione where centroSportivoID = '$row[ID]'";
 
-                    echo 'Docce'.'--';
+                $risultato2 = mysqli_query($conn,$query2);                
+
+                $al = 0;
+
+                $orario = $orario.":00";
+
+                while ($row2 = mysqli_fetch_array($risultato2)) {
+
+                    if ($orario == $row2['orario'] && $data == $row2['data_gioco'] && $opzione == $row2['sport']) {
+                            
+                        $al = 1;
+                    }
                 }
 
-                if ($row['ristorante']) {
 
-                    echo 'Ristorante'.'--';
-                }
+                if ($al == 0) {
 
-                if ($row['bar']) {
 
-                    echo 'Bar'.'--';
-                }
+                    $i = 1;
+                    echo "<div>";
+                    echo '<h2>'.$row['nome'].'</h2>';
+                    echo '<h4>'.$row['citta'].' -- '.$row['indirizzo'].'</h4>';
+                    echo 'Descrizione: '.$row['descrizione'];
+                    echo '<br>';
+                    echo 'Regole: '.$row['regole'];
+                    echo '<br>';
+                    echo 'Servizi Disponibili: ';
+                    if ($row['docce']) {
 
-                if ($row['pizzeria']) {
+                        echo 'Docce'.'--';
+                    }
 
-                    echo 'Pizzeria'.'--';
-                }
+                    if ($row['ristorante']) {
 
-                if ($row['area_picnic']) {
+                        echo 'Ristorante'.'--';
+                    }
 
-                    echo 'Area Picnic'.'--';
-                }
+                    if ($row['bar']) {
 
-                if ($row['spogliatoi']) {
+                        echo 'Bar'.'--';
+                    }
 
-                    echo 'Spogliatoi'.'--';
-                }
+                    if ($row['pizzeria']) {
 
-                if ($row['casacche']) {
+                        echo 'Pizzeria'.'--';
+                    }
 
-                    echo 'Casacche'.'--';
-                }
+                    if ($row['area_picnic']) {
 
-                if ($row['pub']) {
+                        echo 'Area Picnic'.'--';
+                    }
 
-                    echo 'Pub'.'--';
-                }
+                    if ($row['spogliatoi']) {
 
-                if ($row['parcheggio']) {
+                        echo 'Spogliatoi'.'--';
+                    }
 
-                    echo 'Parcheggio'.'--';
-                }
+                    if ($row['casacche']) {
 
-                if ($row['tornei_campionati']) {
+                        echo 'Casacche'.'--';
+                    }
 
-                    echo 'Tornei/Campionati'.'--';
-                }
+                    if ($row['pub']) {
 
-                if ($row['sala_feste']) {
+                        echo 'Pub'.'--';
+                    }
 
-                    echo 'Sala Feste'.'--';
-                }
+                    if ($row['parcheggio']) {
 
-                if ($row['calcio_A5']) {
+                        echo 'Parcheggio'.'--';
+                    }
 
-                    echo 'Calcio A5'.'--';
-                }
+                    if ($row['tornei_campionati']) {
 
-                if ($row['beach_volley']) {
+                        echo 'Tornei/Campionati'.'--';
+                    }
 
-                    echo 'Beach Volley'.'--';
-                }
+                    if ($row['sala_feste']) {
 
-                if ($row['calcio_A8']) {
+                        echo 'Sala Feste'.'--';
+                    }
 
-                    echo 'Calcio A8'.'--';
-                }
+                    if ($row['calcio_A5']) {
 
-                if ($row['rugby']) {
+                        echo 'Calcio A5'.'--';
+                    }
 
-                    echo 'Rugby'.'--';
-                }
+                    if ($row['beach_volley']) {
 
-                if ($row['squash']) {
+                        echo 'Beach Volley'.'--';
+                    }
 
-                    echo 'Squash'.'--';
-                }
+                    if ($row['calcio_A8']) {
+
+                        echo 'Calcio A8'.'--';
+                    }
+
+                    if ($row['rugby']) {
+
+                        echo 'Rugby'.'--';
+                    }
+
+                    if ($row['squash']) {
+
+                        echo 'Squash'.'--';
+                    }
+                    
+                    echo "</div>";
+
+                    $control = "select ID from centroSportivo where nome = '$row[nome]' and citta = '$row[citta]' and indirizzo = '$row[indirizzo]'";
+
+                    echo $control;
+
+                    $valore = mysqli_query($conn,$control);
+
+                    $row = mysqli_fetch_array($valore);
+
                 
-                echo "</div>";
-
-                $control = "select ID from centroSportivo where nome = '$row[nome]' and citta = '$row[citta]' and indirizzo = '$row[indirizzo]'";
-
-                echo $control;
-
-                $valore = mysqli_query($conn,$control);
-
-                $row = mysqli_fetch_array($valore);
-
-               
 
 
-                setcookie("opzione", "", time()-3600);
-                setcookie("opzione", $opzione);
-                setcookie("opzione", $opzione, time()+3600);  /* expire in 1 hour */
-                #echo "<a href=../php/prenotazione.php?row['ID']=", $row['ID'],"><button> PRENOTA </button></a>";
-                
-                $value = $row['ID'];
-                
-                echo "<br>";
+                    setcookie("opzione", "", time()-3600);
+                    setcookie("opzione", $opzione);
+                    setcookie("opzione", $opzione, time()+3600);  /* expire in 1 hour */
+                    #echo "<a href=../php/prenotazione.php?row['ID']=", $row['ID'],"><button> PRENOTA </button></a>";
+                    
+                    $value = $row['ID'];
+                    
+                    echo "<br>";
 
-                echo "AUTENTICATI PER POTER PRENOTARE";
+                    echo "AUTENTICATI PER POTER PRENOTARE";
               
+                }
             ?>
         </body>
         </html>

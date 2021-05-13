@@ -14,8 +14,9 @@
     #echo "connessione al database effettuata";
 
 
+    $data = date("Y-m-d");
     
-    $query = "select * from prenotazione where utente = '$_COOKIE[mail]'";
+    $query = "select * from prenotazione where utente = '$_COOKIE[mail]' and data_gioco >= '$data'";
     
     
     $risultato = mysqli_query($conn,$query);

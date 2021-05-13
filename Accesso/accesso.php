@@ -22,6 +22,25 @@
                 });
             });
 
+            
+            $(document).ready(function(){
+                $("#button_ajax_home_accesso_partite").click(function(){
+                  
+                    var citta_accesso = $( "#citta_accesso_partite" ).val();
+                    var centro_sportivo_accesso = $( "#centro_sportivo_accesso_partite" ).val();
+                    var opzione = $( "#browsers_partite" ).val();
+                    var data = $( "#e_partite" ).val();
+                    var orario = $( "#orario_partite" ).val();
+                    var check_value = $( "#check_value_partite" ).val();
+                    
+                    $.ajax({url: "../php/ricerca_partite.php?citta="+citta_accesso+"&nome="+ centro_sportivo_accesso+ "&data="+ data+ "&orario="+ orario+ "&opzione="+ opzione+ "&check_value="+ check_value, success: function(result){
+                        $("#div_partite").html(result);
+                    }});
+                });
+            });
+            
+
+
             $(document).ready(function(){
                 $("#button_storico_prenotazioni").click(function(){
                     
@@ -110,39 +129,39 @@
 
                 <hr>
 
-                    <div class="boxes">
-                        <input type="text" id="citta_accesso" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>
-                        <input type="text" id="centro_sportivo_accesso" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
+                <div class="boxes">
+                    <input type="text" id="citta_accesso" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>
+                    <input type="text" id="centro_sportivo_accesso" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
+                    
+                    <select name="opzione" id="browsers" onchange="verifyPlayers('check_value', 'browsers');">
+                        <option value="calcio_A5">Calcio A5</option>
+                        <option value="beach_volley">Beach Volley</option>
+                        <option value="calcio_A8">Calcio A8</option>
+                        <option value="rugby">Rugby</option>
+                        <option value="squash">Squash</option>
+                    </select>
+
+                    <input type="date" name="data" onchange="return validaCerca();" id=e>
+
+                    <input type="time" name="orario" id=orario onchange="return validaCercaTime();">
+
+                    <input type='checkbox' onclick='myFunction(`check`)' checked=""/> Non Siete Tutti?
+        
+                    <div id="check">
                         
-                        <select name="opzione" id="browsers" onchange="verifyPlayers('check_value', 'browsers');">
-                            <option value="calcio_A5">Calcio A5</option>
-                            <option value="beach_volley">Beach Volley</option>
-                            <option value="calcio_A8">Calcio A8</option>
-                            <option value="rugby">Rugby</option>
-                            <option value="squash">Squash</option>
-                        </select>
-
-                        <input type="date" name="data" onchange="return validaCerca();" id=e>
-
-                        <input type="time" name="orario" id=orario onchange="return validaCercaTime();">
-
-                        <input type='checkbox' onclick='myFunction(`check`)' checked=""/> Non Siete Tutti?
-            
-                        <div id="check">
-                            
-                            Quanti Giocatori Mancano?: <input id="check_value" type="number" value=0 onchange="verifyPlayers('check_value', 'browsers');">
-            
-                        </div>
-            
+                        Quanti Giocatori Mancano?: <input id="check_value" type="number" value=0 onchange="verifyPlayers('check_value', 'browsers');">
+        
                     </div>
-                   
-                    <button id="button_ajax_home_accesso" class="btn btn-lg btn-success" value="Cerca">
-                        CERCA
-                    </button>
+        
+                </div>
+                
+                <button id="button_ajax_home_accesso" class="btn btn-lg btn-success" value="Cerca">
+                    CERCA
+                </button>
 
-                    <div id = "div1">
-    
-                    </div>
+                <div id = "div1">
+
+                </div>
 
                 <hr>
 
@@ -333,32 +352,37 @@
                 </div>
 
                 <br>
-
-                <div class="split_02">
-                    <form action="ricerca_singola.php" class="form-search" method="POST" name="myForm">
-                            
-                        <div class="boxes">
-                            
-                            <input type="text" placeholder="Inserisci la Città..."/>
-                            <input type="text" placeholder="...Oppure il Centro Sportivo..."/>
-
-                            <select id="browsers">
-                                <option value="CalcioA5">Calcio A5</option>
-                                <option value="Beach_Volley">Beach Volley</option>
-                                <option value="CALCIOA8">Calcio A8</option>
-                                <option value="Rugby">Rugby</option>
-                                <option value="Squash">Squash</option>
-                            </select>
-
-                            <input type="date" onchange="return validaCerca();" id="date_partite">
-
-                            <input type="time" id="orario_partite" onchange="return validaCercaTime();">
-
-                            <input class="btn btn-lg btn-success" type="submit" value="Cerca" onclick="return validaCercaTime();">
+                
+                <div class="boxes">
+                    <input type="text" id="citta_accesso_partite" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso_partite', 'centro_sportivo_accesso_partite')"/>
+                    <input type="text" id="centro_sportivo_accesso_partite" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso_partite', 'centro_sportivo_accesso_partite')"/>
                     
-                        </div>
+                    <select name="opzione" id="browsers_partite" onchange="verifyPlayers('check_value_partite', 'browsers_partite');">
+                        <option value="calcio_A5">Calcio A5</option>
+                        <option value="beach_volley">Beach Volley</option>
+                        <option value="calcio_A8">Calcio A8</option>
+                        <option value="rugby">Rugby</option>
+                        <option value="squash">Squash</option>
+                    </select>
 
-                    </form>
+                    <input type="date" name="data" onchange="return validaCercaPartite();" id=date_partite>
+
+                    <input type="time" name="orario" id=orario_partite onchange="return validaCercaTimePartite();">
+                
+                    <div id="check_partite">
+                        
+                        Quanti Siete?: <input id="check_value_partite" type="number" value=0 onchange="verifyPlayers('check_value_partite', 'browsers_partite');">
+        
+                    </div>
+        
+                </div>
+                
+                <button id="button_ajax_home_accesso_partite" class="btn btn-lg btn-success" value="Cerca">
+                    CERCA
+                </button>
+
+                <div id = "div_partite">
+
                 </div>
                 
             </div>            

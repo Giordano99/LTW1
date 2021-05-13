@@ -21,6 +21,22 @@
             });
 
             $(document).ready(function(){
+                $("#button_ajax_home_accesso_partite").click(function(){
+                  
+                    var citta_accesso = $( "#citta_accesso_partite" ).val();
+                    var centro_sportivo_accesso = $( "#centro_sportivo_accesso_partite" ).val();
+                    var opzione = $( "#browsers_partite" ).val();
+                    var data = $( "#e_partite" ).val();
+                    var orario = $( "#orario_partite" ).val();
+                    var check_value = $( "#check_value_partite" ).val();
+                    
+                    $.ajax({url: "../php/ricerca_partite_index.php?citta="+citta_accesso+"&nome="+ centro_sportivo_accesso+ "&data="+ data+ "&orario="+ orario+ "&opzione="+ opzione+ "&check_value="+ check_value, success: function(result){
+                        $("#div_partite").html(result);
+                    }});
+                });
+            });
+
+            $(document).ready(function(){
                 $("#button_campi_sportivi_Italia_index").click(function(){
                     
                     $.ajax({url: "../php/campi_sportivi_Italia.php", success: function(result){
@@ -182,29 +198,37 @@
                 </div>
                 <br>
                 <div class="split_02">
-                    <form action="../php/ricerca_senza_prenotazione.php" class="form-search" method="POST" name="myForm">
-                            
-                        <div class="boxes">
-                            <input type="text"  name ="citta" placeholder="Inserisci la Città..."/>
-                            <input type="text"  name = "nome" placeholder="...Oppure il Centro Sportivo..."/>
-                           
-                            <select id="browsers">
-                                <option value="CalcioA5">Calcio A5</option>
-                                <option value="Beach_Volley">Beach Volley</option>
-                                <option value="CALCIOA8">Calcio A8</option>
-                                <option value="Rugby">Rugby</option>
-                                <option value="Squash">Squash</option>
-                            </select>
-
-                            <input type="date" onchange="return validaCerca();" id="date_partite">
-
-                            <input type="time" id="orario_partite" onchange="return validaCercaTime();">
-
-                            <input class="btn btn-success" type="submit" value="Cerca" onclick="return validaCercaTime();">
+                    <div class="boxes">
+                        <input type="text" id="citta_accesso_partite" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso_partite', 'centro_sportivo_accesso_partite')"/>
+                        <input type="text" id="centro_sportivo_accesso_partite" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso_partite', 'centro_sportivo_accesso_partite')"/>
+                        
+                        <select name="opzione" id="browsers_partite" onchange="verifyPlayers('check_value_partite', 'browsers_partite');">
+                            <option value="calcio_A5">Calcio A5</option>
+                            <option value="beach_volley">Beach Volley</option>
+                            <option value="calcio_A8">Calcio A8</option>
+                            <option value="rugby">Rugby</option>
+                            <option value="squash">Squash</option>
+                        </select>
+    
+                        <input type="date" name="data" onchange="return validaCercaPartite();" id=date_partite>
+    
+                        <input type="time" name="orario" id=orario_partite onchange="return validaCercaTimePartite();">
                     
+                        <div id="check_partite">
+                            
+                            Quanti Siete?: <input id="check_value_partite" type="number" value=0 onchange="verifyPlayers('check_value_partite', 'browsers_partite');">
+            
                         </div>
-
-                    </form>
+            
+                    </div>
+                    
+                    <button id="button_ajax_home_accesso_partite" class="btn btn-lg btn-success" value="Cerca">
+                        CERCA
+                    </button>
+    
+                    <div id = "div_partite">
+    
+                    </div>
                 </div>
                 
             </div>            

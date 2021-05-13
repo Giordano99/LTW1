@@ -187,6 +187,71 @@ function redirectPage(link) {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+//function to validate date "Partite"
+function validaCercaPartite() {
+            
+    var GivenDate = document.getElementById("date_partite")
+
+    pickedDate = Date.parse(GivenDate.value.replace(/-/g, " "));
+    todaysDate = new Date();
+    todaysDate.setHours(0, 0, 0, 0);
+    
+    if (pickedDate < todaysDate) {
+
+        alert("Data Non Valida -- Non si può prenotare un giorno passato")
+        redirectPage("./index.html")
+        return false;
+    }
+
+    return true;
+}
+
+//function to validate hour and time of forms "Partite"
+function validaCercaTimePartite() {
+    
+    var current = new Date();
+    var GivenTime = document.getElementById("orario_partite")
+    var time = GivenTime.value.split(':');
+    var GivenDate = document.getElementById("date_partite")
+
+    pickedDate = Date.parse(GivenDate.value.replace(/-/g, " "));
+    todaysDate = new Date();
+    todaysDate.setHours(0, 0, 0, 0);
+
+
+    if (pickedDate <= todaysDate && (time[0] < current.getHours() || time[0] <= current.getHours() && time[1] < current.getMinutes())) {
+
+        alert("Data ed Ora Non Validi -- Non si può prenotare prima di adesso")
+        redirectPage(window.location.href)
+        return false;
+    }
+
+    return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 //function to validate date
 function validaCerca() {
             
@@ -199,7 +264,7 @@ function validaCerca() {
     if (pickedDate < todaysDate) {
 
         alert("Data Non Valida -- Non si può prenotare un giorno passato")
-        redirectPage("./index.html")
+        redirectPage(window.location.href)
         return false;
     }
 
