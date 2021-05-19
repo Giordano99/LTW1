@@ -204,7 +204,7 @@
                     
                     $value = $row['ID'];
                     
-                    echo "<a href=../php/prenotazione.php?value=", $value,"&data=", $data,"&orario=", $orario,"&check_value=", $check_value,"><button> PRENOTA </button></a>";
+                    echo "<a href=../php/prenotazione.php?value=", $value,"&data=", $data,"&orario=", $orario,"&check_value=", $check_value,"><button class='btn btn-lg btn-success'> PRENOTA </button></a>";
                 
                 }
                     
