@@ -143,7 +143,7 @@
 
                     if ($row['pub']) {
 
-                        echo '    <img src="https://img.icons8.com/ios/452/poolside-bar.png" style="width:64px;height:64px;">';
+                        echo '<img src="https://img.icons8.com/ios/452/poolside-bar.png" style="width:64px;height:64px;">';
                     }
 
                     if ($row['parcheggio']) {

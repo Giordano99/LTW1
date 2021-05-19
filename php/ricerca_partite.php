@@ -70,7 +70,7 @@
         //else meanings --> if (nome != '') ...
         else {
     
-            $query = "select * from centroSportivo where ID = '$row2[centroSportivoID]' and nome = '$nome and $opzione = 1";
+            $query = "select * from centroSportivo where ID = '$row2[centroSportivoID]' and nome = '$nome' and $opzione = 1";
         }
 
         $risultato = mysqli_query($conn,$query);
