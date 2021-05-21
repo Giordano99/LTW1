@@ -108,7 +108,9 @@
         <a href=#Come_Funziona><button class="tablink" onclick="openPage('Come_Funziona', this, 'green')">Come Funziona</button></a>
         <a href=#Utente><button class="tablink" onclick="openPage('Utente', this, 'orange')"><?php echo "Impostazioni - $_COOKIE[mail]"?></button></a>
         
-        
+        <div id = "titolo">
+            <a href = "../Index/titolo.html">PARTITELLA?</a>
+        </div>
 
    
         <div id="Home_Accesso" class="tabcontent">
@@ -166,7 +168,7 @@
                 <hr>
 
                 <div class='h4'> 
-                <h1 style = "font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: darkblue">Gestisci un campo sportivo?</h1>                      
+                <h1 style = "font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: darkblue">Gestisci un campo sportivo?</h1><br>                      
                 </div>
                 
                 <button class="btn btn-link btn-info" onclick="myFunction('centro_sportivo')"> 
@@ -190,7 +192,7 @@
 
                         <hr style="border: 1px dashed black;" />
                         
-                        Elenco Servizi:
+                        <h6 style = "color:black">Elenco Servizi:</h6>
                         <button type="button" class="btn btn-info" onclick="myFunction('servizi')">Click Me</button>
 
                         <div id="servizi">
@@ -255,7 +257,7 @@
                         <br>
                         <hr style="border: 1px dashed black;" />
 
-                        Elenco Sport:
+                        <h6 style = "color:black">Elenco Sport:</h6>
                         <button type="button" class="btn btn-info" onclick="myFunction('sport')">Click Me</button>
 
                         <div id="sport">
@@ -297,7 +299,7 @@
                 <h1 style = "font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: darkblue">Prenota il tuo campo sportivo</h1>  
                 </div>
 
-                <div>
+                <div id = "info">
                     VELOCE &rarr; Trova rapidamente un campo disponibile nella tua zona e prenota con un clic.    
                     <br>
                     GRATUITO &rarr; Nessun costo aggiuntivo in fase di prenotazione.
@@ -309,21 +311,21 @@
                 <hr>
                 <div class='h5'>
                     
-                    <div>    
+                    <div id = "campi_sportivi">    
                         Campi sportivi in Italia &rarr; 
                         
                         <span id = 'campi_sportivi_Italia'>
                             <button class="btn btn-info" id="button_campi_sportivi_Italia">Scoprili</button>
                         </span>
                     </div>
-                    <div>
+                    <div id = "utenti_registrati">
                         Utenti Registrati &rarr;
 
                         <span id = 'utenti_registrati'>
                             <button class="btn btn-info" id="button_utenti_registrati">Scoprili</button>
                         </span>
                     </div>
-                    <div>
+                    <div id = "prenotazioni_tot">
                         Prenotazioni totali &rarr;
 
                         <span id = 'prenotazioni_totali'>
@@ -340,15 +342,15 @@
             <div class="split_02">
 
                 <div class='h3'> 
-                    Come al solito vuoi giocare ma non hai compagni sufficienti oppure non riuscite ad essere
-                    abbastanza per una Partitella? Bhe allora stai nel sito giusto, ci sono migliaia di partite
-                    a cui mancano dei giocatori, unisciti a loro !! 
+                <h3 style = "color:black">Come al solito vuoi giocare ma non hai compagni sufficienti oppure non riuscite ad essere
+                    abbastanza per una Partitella? <br>Sei nel sito giusto, ci sono migliaia di partite
+                    a cui mancano dei giocatori, unisciti a loro !!</h3>
                 </div>
                 <br>
 
                 <div class='h4'> 
-                    Innanzitutto ti chiediamo di completare la form qui sotto, in questo modo potremo proporti
-                    tutto l'elenco possibile di partite a cui mancano dei componenti !! 
+                <h3 style = "color:black">Innanzitutto ti chiediamo di completare la form qui sotto, in questo modo potremo proporti
+                    tutto l'elenco possibile di partite a cui mancano dei componenti !! </h3>
                 </div>
 
                 <br>
@@ -395,50 +397,50 @@
 
 
                 <div class='h2'> 
-                    Per poter usare pienamente 'Partitella?' basta seguire pochi semplici 
-                    passi, vedrai che è semplicissimo !! 
+                <h3 style = "color:black">Per poter usare pienamente 'Partitella?' basta seguire pochi semplici 
+                    passi, vedrai che è semplicissimo !! </h3>
                 </div>
                 <br>
-                Siete al completo e vuoi prenotare un campo
+                <h3 style = "color:black">Siete al completo e vuoi prenotare un campo</h3>
 
                 <button class="btn btn-info" onclick="myFunction('how_work_prenota')">Click Me</button>
 
                 <div id="how_work_prenota">
                 
-                Facile, basta andare nel tab "Menù" (il primo a sinistra) e da lì
-                potrai prenotare un campo sportivo, facile ed intuitivo
+                <h6 style = "color:black">Facile, basta andare nel tab "Menù" (il primo a sinistra) e da lì
+                potrai prenotare un campo sportivo, facile ed intuitivo</h6>
 
                 </div>
                 <hr>
-                Hai una voglia folle di giocare ma non conosci nessuno oppure
-                non siete abbastanza per fare una Partitella?
+                <h3 style = "color:black">Hai una voglia folle di giocare ma non conosci nessuno oppure
+                non siete abbastanza per fare una Partitella?</h3>
                 <button class="btn btn-info" onclick="myFunction('how_work_partite')">Click Me</button>
 
                 <div id="how_work_partite">
                 
-                    Nella sezione "Partite" puoi selezionare la tua città e da lì 
-                    ti compariranno tutte le partite alle quali mancano degli elementi !!
+                <h6 style = "color:black">Nella sezione "Partite" puoi selezionare la tua città e da lì 
+                    ti compariranno tutte le partite alle quali mancano degli elementi !!</h6>
                 
                 </div>
                 <hr>
-                Hai un campo sportivo e vuoi aggiungerlo al nostro sistema
+                <h3 style = "color:black">Hai un campo sportivo e vuoi aggiungerlo al nostro sistema</h3>
 
                 <button class="btn btn-info" onclick="myFunction('how_work_gestione')">Click Me</button>
 
                 <div id="how_work_gestione">
                 
-                    Nella Home c'è la sezione apposita !!
+                <h6 style = "color:black">Nella Home c'è la sezione apposita !!</h6>
                 
                 </div>
                 <hr>
-                Vuoi iscriverti/loggarti?
+                <h3 style = "color:black">Vuoi iscriverti/loggarti?</h3>
 
                 <button class="btn btn-info" onclick="myFunction('how_work_accesso')">Click Me</button>
 
                 <div id="how_work_accesso">
                 
-                    Basta che vai nella sezione "Accedi/Registrati" --> Se leggi solamente
-                    "Impostazioni" significa che sei già loggato !!
+                <h6 style = "color:black">Basta che vai nella sezione "Accedi/Registrati" --> Se leggi solamente
+                    "Impostazioni" significa che sei già loggato !!</h6>
 
                 </div>
                 <hr>
@@ -455,7 +457,7 @@
                 </a>
 
                 <hr>
-                Storico Prenotazioni
+                <h6 style = "color:black">Storico Prenotazioni</h6>
                 <button id="button_storico_prenotazioni" onclick = "myFunction('div2')" class="btn btn-info" value="Click me">
                     Click me
                 </button>
@@ -476,7 +478,7 @@
                 <!--  FIN QUI NON SI VEDE  -->
 
 
-                Impostazioni Profilo
+                <h6 style = "color:black">Impostazioni Profilo</h6>
 
                 <button class="btn btn-info" onclick="myFunction('profilo')">Click Me</button>
 
@@ -528,7 +530,7 @@
 
                 <hr>
 
-                Impostazioni Conto
+                <h6 style = "color:black">Impostazioni Conto</h6>
 
                 <button class="btn btn-info" onclick="myFunction('conto')">Click Me</button>
 
@@ -541,7 +543,7 @@
 
                 <hr>
 
-                Assistenza
+                <h6 style = "color:black">Assistenza</h6>
 
                 <button class="btn btn-info" onclick="myFunction('assistenza')">Click Me</button>
 

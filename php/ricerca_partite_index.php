@@ -99,13 +99,13 @@
 
                 $i = 1;
                 echo "<div>";
-                echo '<h2>'.$row['nome'].'</h2>';
-                echo '<h4>'.$row['citta'].' -- '.$row['indirizzo'].'</h4>';
-                echo 'Descrizione: '.$row['descrizione'];
+                echo '<h2 style = "color:red">'.$row['nome'].'</h2>';
+                echo '<h4 style = "color:black">'.$row['citta'].' -- '.$row['indirizzo'].'</h4>';
+                echo '<h4 style = "color:black"> Descrizione: '.$row['regole'].'</h4>';
                 echo '<br>';
-                echo 'Regole: '.$row['regole'];
+                echo '<h4 style = "color:black"> Regole: '.$row['regole'].'</h4>';
                 echo '<br>';
-                echo 'Servizi Disponibili: ';
+                echo '<h4 style = "color:black">Servizi Disponibili: </h4>';
 
                 if ($row['docce']) {
 

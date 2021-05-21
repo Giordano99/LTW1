@@ -85,11 +85,11 @@
         <a href=#Partite><button class="tablink" onclick="openPage('Partite', this, 'blue')">Partite</button></a>
         <a href=#Come_Funziona><button class="tablink" onclick="openPage('Come_Funziona', this, 'green')">Come Funziona</button></a>
         <a href=#Accedi-Registrati><button class="tablink" onclick="openPage('Accedi-Registrati', this, 'orange')">Accedi/Registrati</button></a>
-        
+        <div id = "titolo">
+            <a href = "titolo.html">PARTITELLA?</a>
+        </div>
         <div id="Home" class="tabcontent">
-            
             <div class="split_02">
-            
                 <div id = "app">
 
                     <div  class="product=image">
@@ -135,12 +135,14 @@
                 </div>
                 
                 <div class='h4'>
-                    Gestiremo noi il tuo calendario degli appuntamenti per filo e per segno
+                    <div id = "gestione">
+                    Gestiremo noi il tuo calendario degli appuntamenti per filo e per segno.
                     <br>
-                    Aggiungi il tuo centro sportivo al nostro database, è semplice e veloce
+                    Aggiungi il tuo centro sportivo al nostro database, è semplice e veloce.
                     <br>
-                    Fai l'accesso e sarà semplicissimo a quel punto inserire un nuovo centro sportivo
+                    Fai l'accesso e sarà semplicissimo a quel punto inserire un nuovo centro sportivo.
                     <br>
+                    </div>
                     <button class="btn btn-link btn-info" onclick="openPage('Accedi-Registrati', this, 'orange')"> 
                         Clicca qui per autenticarti/registrarti ed unirti alla community 
                     </button>
@@ -150,7 +152,7 @@
                     <h1 style = "font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: darkblue">Prenota il tuo campo sportivo</h1> 
                 </div>
 
-                <div>
+                <div id = "info">
                     VELOCE &rarr; Trova rapidamente un campo disponibile nella tua zona e prenota con un clic.    
                     <br>
                     GRATUITO &rarr; Nessun costo aggiuntivo in fase di prenotazione.
@@ -162,19 +164,19 @@
 
                 <hr>
                 <div class='h5'>
-                    <div>    
+                    <div id = "campi_sportivi">    
                         Campi sportivi in Italia &rarr; 
                         <span id = 'campi_sportivi_Italia_index'>
                             <button class="btn btn-info" id="button_campi_sportivi_Italia_index">Scoprili</button>
                         </span>
                     </div>
-                    <div>
+                    <div id = "utenti_registrati">
                         Utenti Registrati &rarr;
                         <span id = 'utenti_registrati_index'>
                             <button class="btn btn-info" id="button_utenti_registrati_index">Scoprili</button>
                         </span>
                     </div>
-                    <div>
+                    <div id = "prenotazioni_tot">
                         Prenotazioni totali &rarr;
                         <span id = 'prenotazioni_totali_index'>
                             <button class="btn btn-info" id="button_prenotazioni_totali_index">Scoprili</button>
@@ -187,14 +189,15 @@
         <div id="Partite" class="tabcontent">
             <div class="split_02">
                 <div class='h3'> 
-                    Come al solito vuoi giocare ma non hai compagni sufficienti oppure non riuscite ad essere
-                    abbastanza per una Partitella?Sei nel sito giusto, ci sono migliaia di partite
-                    a cui mancano dei giocatori, unisciti a loro !! 
+                    <h3 style = "color :black"> Come al solito vuoi giocare ma non hai compagni sufficienti oppure non riuscite ad essere
+                    abbastanza per una Partitella?<br>
+                    Sei nel sito giusto, ci sono migliaia di partite
+                    a cui mancano dei giocatori, unisciti a loro !! </h3>
                 </div>
                 <br>
                 <div class='h4'> 
-                    Innanzitutto ti chiediamo di completare la form qui sotto, in questo modo potremo proporti
-                    tutto l'elenco possibile di partite a cui mancano dei componenti !! 
+                    <h3 style = "color:black">Innanzitutto ti chiediamo di completare la form qui sotto, in questo modo potremo proporti
+                    tutto l'elenco possibile di partite a cui mancano dei componenti !! </h3>
                 </div>
                 <br>
                 <div class="split_02">
@@ -241,50 +244,49 @@
 
 
                 <div class='h2'> 
-                    Per poter usare pienamente 'Partitella?' basta seguire pochi semplici 
-                    passi, vedrai che è semplicissimo !! 
+                    <h3 style = "color:black"> Per poter usare pienamente 'Partitella?' basta seguire pochi semplici 
+                    passi, vedrai che è semplicissimo !!</h3> 
                 </div>
-                <br>
-                Siete al completo e vuoi prenotare un campo
+                <h3 style = "color:black">Siete al completo e vuoi prenotare un campo</h3>
 
                 <button class="btn btn-info" onclick="myFunction('how_work_prenota')">Click Me</button>
 
                 <div id="how_work_prenota">
                 
-                Facile, basta andare nel tab "Menù" (il primo a sinistra) e da lì
-                potrai prenotare un campo sportivo, facile ed intuitivo
+                <h6 style = "color:black"> Facile,basta andare nel tab "Menù" (il primo a sinistra) e da lì
+                potrai prenotare un campo sportivo, facile ed intuitivo</h6>
 
                 </div>
                 <hr>
-                Hai una voglia folle di giocare ma non conosci nessuno oppure
-                non siete abbastanza per fare una Partitella?
+                <h3 style = "color:black">Hai una voglia folle di giocare ma non conosci nessuno oppure
+                non siete abbastanza per fare una Partitella?</h3>
                 <button class="btn btn-info" onclick="myFunction('how_work_partite')">Click Me</button>
 
                 <div id="how_work_partite">
                 
-                    Nella sezione "Partite" puoi selezionare la tua città e da lì 
-                    ti compariranno tutte le partite alle quali mancano degli elementi !!
+                    <h6 style = "color:black">Nella sezione "Partite" puoi selezionare la tua città e da lì 
+                    ti compariranno tutte le partite alle quali mancano degli elementi !!</h6>
                 
                 </div>
                 <hr>
-                Hai un campo sportivo e vuoi aggiungerlo al nostro sistema
+                <h3 style = "color:black">Hai un campo sportivo e vuoi aggiungerlo al nostro sistema</h3>
 
                 <button class="btn btn-info" onclick="myFunction('how_work_gestione')">Click Me</button>
 
                 <div id="how_work_gestione">
                 
-                    Nella Home c'è la sezione apposita !!
+                    <h6 style = "color:black">Nella Home c'è la sezione apposita !!</h6>
                 
                 </div>
                 <hr>
-                Vuoi iscriverti/loggarti?
+                <h3 style = "color:black">Vuoi iscriverti/loggarti?</h3>
 
                 <button class="btn btn-info" onclick="myFunction('how_work_accesso')">Click Me</button>
 
                 <div id="how_work_accesso">
                 
-                    Basta che vai nella sezione "Accedi/Registrati" --> Se leggi solamente
-                    "Impostazioni" significa che sei già loggato !!
+                    <h6 style = "color:black">Basta che vai nella sezione "Accedi/Registrati" --> Se leggi solamente
+                    "Impostazioni" significa che sei già loggato !!</h6>
 
                 </div>
                 <hr>

@@ -58,11 +58,11 @@
                 $riga = mysqli_fetch_array($results);
                 
                 echo '<hr style="border: 1px dashed black;" />';
-                echo '<h1>'.'Nome Centro Sportivo: '.$riga['nome'].'</h2>';
-                echo '<h2>'.'Città: '.$riga['citta'].'</h3>';
-                echo '<h3>'.'Indirizzo: '.$riga['indirizzo'].'</h4>';
-                echo '<h4>'.'Sport prenotato: '.$row['sport'].'</h4>';
-                echo '<h5>'.'Prenotazione a nome di: '.$row['utente'].'</h5>';
+                echo '<h1 style = "color:red">'.'Nome Centro Sportivo: '.$riga['nome'].'</h2>';
+                echo '<h2 style = "color:black">'.'Città: '.$riga['citta'].'</h3>';
+                echo '<h3 style = "color:black">'.'Indirizzo: '.$riga['indirizzo'].'</h4>';
+                echo '<h4 style = "color:black">'.'Sport prenotato: '.$row['sport'].'</h4>';
+                echo '<h5 style = "color:black">'.'Prenotazione a nome di: '.$row['utente'].'</h5>';
                 
                 
             ?>
