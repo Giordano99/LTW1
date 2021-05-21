@@ -55,7 +55,7 @@
         echo "<script>alert('Inserire la città o il centro sportivo per la ricerca');</script>";
     }
 
-    $query2 = "select * from prenotazione where check_value >= $check_value";
+    $query2 = "select * from prenotazione where check_value >= $check_value and data_gioco >= '$data'";
 
     $risultato2 = mysqli_query($conn,$query2);
 

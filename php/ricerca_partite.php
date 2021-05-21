@@ -47,7 +47,7 @@
     $orario = $_GET["orario"];
     $opzione = $_GET["opzione"];
     $check_value = $_GET["check_value"];
-    
+
     $i = 0;
     if ($citta == '' && $nome == '') {
 
@@ -55,8 +55,9 @@
         echo "<script>alert('Inserire la città o il centro sportivo per la ricerca');</script>";
     }
 
-    $query2 = "select * from prenotazione where check_value >= $check_value";
+    $query2 = "select * from prenotazione where check_value >= $check_value and data_gioco >= '$data'";
 
+    echo $query2;
     $risultato2 = mysqli_query($conn,$query2);
 
     while ($row2 = mysqli_fetch_array($risultato2)) {
@@ -70,7 +71,7 @@
         //else meanings --> if (nome != '') ...
         else {
     
-            $query = "select * from centroSportivo where ID = '$row2[centroSportivoID]' and nome = '$nome and $opzione = 1";
+            $query = "select * from centroSportivo where ID = '$row2[centroSportivoID]' and nome = '$nome' and $opzione = 1";
         }
 
         $risultato = mysqli_query($conn,$query);

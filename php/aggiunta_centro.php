@@ -28,8 +28,6 @@
 
     if($row){
         
-        #echo "utente già registrato";
-        
         echo "<script>alert('Centro Sportivo già Registrato')</script>";
         echo "<script>window.open('../Accesso/accesso.php','_self')</script>";
         
@@ -65,7 +63,8 @@
                     echo "<script>alert('Centro Sportivo Aggiunto con Successo')</script>";
                 }
                 else {
-                echo "<script>alert('op')</script>";}
+                    echo "<script>alert('op')</script>";
+                }
             }
         }
     }

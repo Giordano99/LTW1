@@ -143,7 +143,7 @@
 
                     if ($row['pub']) {
 
-                        echo '    <img src="https://img.icons8.com/ios/452/poolside-bar.png" style="width:64px;height:64px;">';
+                        echo '<img src="https://img.icons8.com/ios/452/poolside-bar.png" style="width:64px;height:64px;">';
                     }
 
                     if ($row['parcheggio']) {
@@ -204,7 +204,7 @@
                     
                     $value = $row['ID'];
                     
-                    echo "<a href=../php/prenotazione.php?value=", $value,"&data=", $data,"&orario=", $orario,"&check_value=", $check_value,"><button> PRENOTA </button></a>";
+                    echo "<a href=../php/prenotazione.php?value=", $value,"&data=", $data,"&orario=", $orario,"&check_value=", $check_value,"><button class='btn btn-lg btn-success'> PRENOTA </button></a>";
                 
                 }
                     

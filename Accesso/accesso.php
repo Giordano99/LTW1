@@ -29,7 +29,7 @@
                     var citta_accesso = $( "#citta_accesso_partite" ).val();
                     var centro_sportivo_accesso = $( "#centro_sportivo_accesso_partite" ).val();
                     var opzione = $( "#browsers_partite" ).val();
-                    var data = $( "#e_partite" ).val();
+                    var data = $( "#date_partite" ).val();
                     var orario = $( "#orario_partite" ).val();
                     var check_value = $( "#check_value_partite" ).val();
                     
@@ -149,7 +149,7 @@
         
                     <div id="check">
                         
-                        Quanti Giocatori Mancano?: <input id="check_value" type="number" value=0 onchange="verifyPlayers('check_value', 'browsers');">
+                        Quanti Giocatori Mancano?: <input id="check_value" type="number" onchange="verifyPlayers('check_value', 'browsers');">
         
                     </div>
         

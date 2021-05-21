@@ -2,20 +2,49 @@ function verifyPlayers(giocatori, opzione) {
 
     giocatori = document.getElementById(giocatori).value;
     opzione = document.getElementById(opzione).value;
+
+    if (giocatori <= 0) {
+
+        alert("Inserire almeno un Giocatore");
+        if (window.location.href.search('accesso.php') != -1) {
+            
+            redirectPage('./accesso.php')
+        }
+        if (window.location.href.search('index.html') != -1) {
+
+            redirectPage('./index.html')
+        }
+    }
     if (opzione == 'calcio_A5') {
 
         if (giocatori > 10) {
 
             alert("Mancano Troppi Giocatori");
-            redirectPage("./accesso.html")
+            if (window.location.href.search('accesso.php') != -1) {
+            
+                redirectPage('./accesso.php')
+            }
+            if (window.location.href.search('index.html') != -1) {
+    
+                redirectPage('./index.html')
+            }
+            
         }
     }
     if (opzione == 'beach_volley') {
 
         if (giocatori > 4) {
 
+            
             alert("Mancano Troppi Giocatori");
-            redirectPage("./accesso.html")
+            if (window.location.href.search('accesso.php') != -1) {
+            
+                redirectPage('./accesso.php')
+            }
+            if (window.location.href.search('index.html') != -1) {
+    
+                redirectPage('./index.html')
+            }
         }
         
     }
@@ -24,7 +53,14 @@ function verifyPlayers(giocatori, opzione) {
         if (giocatori > 16) {
 
             alert("Mancano Troppi Giocatori");
-            redirectPage("./accesso.html")
+            if (window.location.href.search('accesso.php') != -1) {
+            
+                redirectPage('./accesso.php')
+            }
+            if (window.location.href.search('index.html') != -1) {
+    
+                redirectPage('./index.html')
+            }
         }
     }
     if (opzione == 'rugby') {
@@ -32,7 +68,14 @@ function verifyPlayers(giocatori, opzione) {
         if (giocatori > 30) {
 
             alert("Mancano Troppi Giocatori");
-            redirectPage("./accesso.html")
+            if (window.location.href.search('accesso.php') != -1) {
+            
+                redirectPage('./accesso.php')
+            }
+            if (window.location.href.search('index.html') != -1) {
+    
+                redirectPage('./index.html')
+            }
         }
     }
     if (opzione == 'squash') {
@@ -40,7 +83,14 @@ function verifyPlayers(giocatori, opzione) {
         if (giocatori > 4) {
 
             alert("Mancano Troppi Giocatori");
-            redirectPage("./accesso.html")
+            if (window.location.href.search('accesso.php') != -1) {
+            
+                redirectPage('./accesso.php')
+            }
+            if (window.location.href.search('index.html') != -1) {
+    
+                redirectPage('./index.html')
+            }
         }
     }
 }
@@ -240,18 +290,6 @@ function validaCercaTimePartite() {
     return true;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 //function to validate date
 function validaCerca() {
             
@@ -264,7 +302,14 @@ function validaCerca() {
     if (pickedDate < todaysDate) {
 
         alert("Data Non Valida -- Non si può prenotare un giorno passato")
-        redirectPage(window.location.href)
+        if (window.location.href.search('accesso.php') != -1) {
+            
+            redirectPage('./accesso.php')
+        }
+        if (window.location.href.search('index.html') != -1) {
+
+            redirectPage('./index.html')
+        }
         return false;
     }
 
@@ -287,7 +332,15 @@ function validaCercaTime() {
     if (pickedDate <= todaysDate && (time[0] < current.getHours() || time[0] <= current.getHours() && time[1] < current.getMinutes())) {
 
         alert("Data ed Ora Non Validi -- Non si può prenotare prima di adesso")
-        redirectPage("./index.html")
+
+        if (window.location.href.search('accesso.php') != -1) {
+            
+            redirectPage('./accesso.php')
+        }
+        if (window.location.href.search('index.html') != -1) {
+
+            redirectPage('./index.html')
+        }
         return false;
     }
 
@@ -375,6 +428,11 @@ function openPage(pageName, elmnt, color) {
         array = ['login_toggleText', 'registrazione_toggleText']
         clickHide(array)
     }*/
+
+    if (pageName == 'Partite') {
+
+        document.getElementById('check_value_partite').value = 1;
+    }
     
     if (pageName == 'Come_Funziona') {
 
