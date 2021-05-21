@@ -236,7 +236,8 @@ h2 {
   margin-bottom: 0.83em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: bold;
+  font-weight: Impact;
+  color:#0f0cca
 }
 h3 { 
   display: block;
@@ -313,3 +314,4 @@ label {
 .size_of_img{
   width:90px
 }
+

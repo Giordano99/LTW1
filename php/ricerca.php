@@ -98,8 +98,8 @@
 
                     $i = 1;
                     echo "<div>";
-                    echo '<h2>'.$row['nome'].'</h2>';
-                    echo '<h4>'.$row['citta'].' -- '.$row['indirizzo'].'</h4>';
+                    echo '<h2><span style = "color:blue;font-family:Helvetica"> '.$row['nome'].'</span></h2>';
+                    echo '<h4><span style = "color:blue;font-family:Helvetica">'.$row['citta'].' -- '.$row['indirizzo'].'</span></h4>';
                     echo 'Descrizione: '.$row['descrizione'];
                     echo '<br>';
                     echo 'Regole: '.$row['regole'];

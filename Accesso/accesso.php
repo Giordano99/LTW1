@@ -166,7 +166,7 @@
                 <hr>
 
                 <div class='h4'> 
-                    Gestisci un centro sportivo?
+                <h1 style = "font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: darkblue">Gestisci un campo sportivo?</h1>                      
                 </div>
                 
                 <button class="btn btn-link btn-info" onclick="myFunction('centro_sportivo')"> 
@@ -294,7 +294,7 @@
                 <hr>
                 
                 <div class='h2'> 
-                    Prenota il tuo campo sportivo 
+                <h1 style = "font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: darkblue">Prenota il tuo campo sportivo</h1>  
                 </div>
 
                 <div>
