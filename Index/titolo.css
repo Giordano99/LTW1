@@ -33,6 +33,27 @@ input[type="checkbox"] {
   z-index: 100;
 }
 
+span.example {
+
+  position: relative;
+  height: 80px;
+  width: 80px;
+  background: #18191f;
+  color: rgb(218, 0, 0);
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  cursor: pointer;
+  margin: 0 4px;
+  border-radius: 20px;
+  box-shadow: -1px -1px 4px rgba(43, 211, 28, 0.05),
+    4px 4px 6px rgba(38, 15, 240, 0.2),
+    inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
 div {
   position: relative;
   height: 80px;
