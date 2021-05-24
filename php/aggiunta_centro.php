@@ -23,21 +23,19 @@
     $control = " select * from centroSportivo where nome = '$nome' and citta = '$citta' and indirizzo = '$indirizzo'";
 
     $risultato = mysqli_query($conn,$control);
-    $row = mysqli_fetch_array($risultato);
-
-
+    $row = mysqli_fetch_array($risultato);    
+    
     if($row){
         
         echo "<script>alert('Centro Sportivo già Registrato')</script>";
         echo "<script>window.open('../Accesso/accesso.php','_self')</script>";
-        
         
         exit();
     }
     else {
 
         $query = "insert into centroSportivo(nome, citta, indirizzo, descrizione, regole, docce, ristorante, bar, pizzeria, area_picnic, spogliatoi, casacche, pub, parcheggio, tornei_campionati, sala_feste, calcio_A5, beach_volley, calcio_A8, rugby, squash) values ('$nome','$citta','$indirizzo','$descrizione', '$regole', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)";
-
+        
         if (mysqli_query($conn,$query)) {
 
             $servizi = $_POST['servizi'];

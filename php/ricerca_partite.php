@@ -57,7 +57,6 @@
 
     $query2 = "select * from prenotazione where check_value >= $check_value and data_gioco >= '$data'";
 
-    
     $risultato2 = mysqli_query($conn,$query2);
 
     while ($row2 = mysqli_fetch_array($risultato2)) {
@@ -84,13 +83,15 @@
 
             $al = 0;
 
+            
             $orario = $orario.":00";
 
             while ($row3 = mysqli_fetch_array($risultato3)) {
 
                 if ($orario == $row3['orario'] && $data == $row3['data_gioco'] && $opzione == $row3['sport']) {
-                        
-                    $al = 1;
+                    
+                    
+                    $al = 0;
                 }
             }
 
@@ -99,14 +100,13 @@
 
                 $i = 1;
                 echo "<div>";
-                echo '<h2 style = "color:red">'.$row['nome'].'</h2>';
-                echo '<h4 style = "color:black">'.$row['citta'].' -- '.$row['indirizzo'].'</h4>';
-                echo '<h4 style = "color:black"> Descrizione: '.$row['regole'].'</h4>';
-
+                echo '<h2>'.$row['nome'].'</h2>';
+                echo '<h4>'.$row['citta'].' -- '.$row['indirizzo'].'</h4>';
+                echo 'Descrizione: '.$row['descrizione'];
                 echo '<br>';
-                echo '<h4 style = "color:black"> Regole: '.$row['regole'].'</h4>';
+                echo 'Regole: '.$row['regole'];
                 echo '<br>';
-                echo '<h4 style = "color:black">Servizi Disponibili: </h4>';
+                echo 'Servizi Disponibili: ';
 
                 if ($row['docce']) {
 
@@ -197,7 +197,7 @@
                 echo "</div>";
             }
 
-            echo "<a href=../php/prenotazione_partite.php?ID=", $row2['ID'],"&check_value=", $check_value,"&mancanti=", $mancanti,"><button> PRENOTA </button></a>";
+            echo "<a href=../php/prenotazione_partite.php?ID=", $row2['ID'],"&check_value=", $check_value,"&mancanti=", $mancanti,"><button class='btn btn-lg btn-success'> PRENOTA </button></a>";
 
         }
             

@@ -15,9 +15,9 @@
 
 
     $data = date("Y-m-d");
-    
-    $query = "select * from prenotazione where utente = '$_COOKIE[mail]' and data_gioco >= '$data'";
-    
+    $now = date('H:i');
+    $now = $now.":00";
+    $query = "select * from prenotazione where utente = '$_COOKIE[mail]' and data_gioco >= '$data' and orario >= '$now'";
     
     $risultato = mysqli_query($conn,$query);
 ?>
@@ -49,8 +49,11 @@
        
         
             <?php
+            $i = 0;
+            
             while ($row = mysqli_fetch_array($risultato)) {
-
+                
+                $i = 1;
                 $second_query = "select * from centroSportivo where ID = $row[centroSportivoID]";
                 $results = mysqli_query($conn,$second_query);
         
@@ -58,11 +61,14 @@
                 $riga = mysqli_fetch_array($results);
                 
                 echo '<hr style="border: 1px dashed black;" />';
-                echo '<h1 style = "color:red">'.'Nome Centro Sportivo: '.$riga['nome'].'</h2>';
-                echo '<h2 style = "color:black">'.'Città: '.$riga['citta'].'</h3>';
-                echo '<h3 style = "color:black">'.'Indirizzo: '.$riga['indirizzo'].'</h4>';
+                echo '<h1 style = "color:red">'.'Nome Centro Sportivo: '.$riga['nome'].'</h1>';
+                echo '<h2 style = "color:black">'.'Città: '.$riga['citta'].'</h2>';
+                echo '<h3 style = "color:black">'.'Indirizzo: '.$riga['indirizzo'].'</h3>';
                 echo '<h4 style = "color:black">'.'Sport prenotato: '.$row['sport'].'</h4>';
-                echo '<h5 style = "color:black">'.'Prenotazione a nome di: '.$row['utente'].'</h5>';
+                echo '<h5 style = "color:black">'.'Data di Prenotazione: '.$row['data_gioco'].'</h5>';
+                echo '<h5 style = "color:black">'.'Orario di Prenotazione: '.$row['orario'].'</h5>';
+                
+                echo '<h6 style = "color:black">'.'Prenotazione a nome di: '.$row['utente'].'</h6>';
                 
                 
             ?>
@@ -70,6 +76,10 @@
         </html>
         <?php
             
+            }
+            if ($i == 0) {
+
+                echo "Non è presente alcuna prenotazione effettuata";
             }
         ?>
 

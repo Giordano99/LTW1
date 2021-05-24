@@ -131,7 +131,7 @@
                     <input type="text" id="citta_accesso" name="citta" placeholder="Inserisci la Città..." onclick="primaCitta('citta_accesso', 'centro_sportivo_accesso')"/>
                     <input type="text" id="centro_sportivo_accesso" name="nome" placeholder="...Oppure il Centro Sportivo..." onclick="primaCentro('citta_accesso', 'centro_sportivo_accesso')"/>
                     
-                    <select name="opzione" id="browsers" onchange="verifyPlayers('check_value', 'browsers');">
+                    <select name="opzione" id="browsers">
                         <option value="calcio_A5">Calcio A5</option>
                         <option value="beach_volley">Beach Volley</option>
                         <option value="calcio_A8">Calcio A8</option>
@@ -314,7 +314,7 @@
                             <button class="btn btn-info" id="button_campi_sportivi_Italia">Scoprili</button>
                         </span>
                     </div>
-                    <div id = "utenti_registrati">
+                    <div id = "utenti_registrati_">
                         Utenti Registrati &rarr;
 
                         <span id = 'utenti_registrati'>

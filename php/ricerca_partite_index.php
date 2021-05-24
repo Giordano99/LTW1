@@ -90,7 +90,7 @@
 
                 if ($orario == $row3['orario'] && $data == $row3['data_gioco'] && $opzione == $row3['sport']) {
                         
-                    $al = 1;
+                    $al = 0;
                 }
             }
 
