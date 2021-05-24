@@ -99,18 +99,18 @@ table {
 .column_login {
     float: left;
     width: 50%;
-    height: 1000px;
+    height: 500px;
     padding: 5px;
-    background-color: rgba(159, 250, 131, 0.884);
+    background-color: #96c1da;
   
 }
 
 .column_registrazione {
     float: right;
     width: 50%;
-    height: 1000px;
+    height: 500px;
     padding: 5px;
-    background-color: rgb(6, 96, 102);
+    background-color: #cc96da;
 }
 
 .column_homepage {

@@ -14,6 +14,9 @@
     #echo "connessione al database effettuata";
 
 
+    //reset cookie
+    setcookie("mail","", time()-3600);
+
     $name = $_POST["nome"];
     $cogn = $_POST["cognome"];
     $pass = md5($_POST["password"]);
@@ -41,7 +44,8 @@
 
         if(mysqli_query($conn,$query))
         {
-            setcookie("mail","$mail",strtotime("+1 year"));
+            setcookie("mail", $mail);
+            setcookie("mail", $mail, time()+3600,"/");  /* expire in 1 hour */
             echo "<script>alert('Registrazione Effettuata')</script>";
             echo "<script>window.open('../Accesso/accesso.php#Home_Accesso','_self')</script>";
             
